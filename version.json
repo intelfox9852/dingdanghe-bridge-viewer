@@ -20,20 +20,20 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "cross_sections.js": {
-      "bytes": 6216,
-      "sha256": "e53d13cd00814b278dca5cf1b675a6bf4314e91faa28c3aba36c65f44d736c4b"
+      "bytes": 6182,
+      "sha256": "635058d0d4d31f333ce1b72f8f5e545e39c464ed86059d3044bbf7d8dd3fd899"
     },
     "index.html": {
-      "bytes": 6879,
-      "sha256": "4790dfcc91f8dbcd46762792f6b2b4ff01476bbeba97dd2720f12fee3ce5e3e4"
+      "bytes": 6870,
+      "sha256": "76fb90c67649f61e433606bc5c426ecbc625b13dba4813446d94a16b480645f3"
     },
     "model.json.gz": {
       "bytes": 19525648,
       "sha256": "8e6e2a3633922ccf80f199192599de510902354320082fe6100853db046db2c8"
     },
     "README.md": {
-      "bytes": 940,
-      "sha256": "7c82a8491be0fa3ae8368896a1d11933384a132e8dc7c473ef9a03977a14a358"
+      "bytes": 929,
+      "sha256": "d21f6ce50311b2d1f4cc84a644410a585d821c7dc2c01e2a7f22e1553aa30934"
     },
     "terrain/测绘底图.png": {
       "bytes": 236843,
@@ -72,32 +72,32 @@
       "sha256": "eafead3154ec06093f3108bddceab360f048a6fcebd7c085d5aae0ab5404bd25"
     },
     "viewer.js": {
-      "bytes": 16694,
-      "sha256": "1eb5994f1c869663abf64226c76e3725671c45130aed9b9095070002e19a6024"
+      "bytes": 16608,
+      "sha256": "1b8db022fea79118237275246dd452ae3274239011fda602571b40e252350d8b"
     },
     "一般构造核查报告.md": {
-      "bytes": 10195,
-      "sha256": "b9b4bbc0c0e09fed431e5799b95efd74e6315d6c4f4914c25a64ac90c1afe6f3"
+      "bytes": 10111,
+      "sha256": "33bec9d3f084bb5048cb7ca2763e0406659bb89c8d96b62f90e5287886d54190"
     },
     "叮当河特大桥.obj.gz": {
       "bytes": 20513155,
       "sha256": "1f74aa7fc3dcfa7cf0101e8c4a3ca4cbaf3e0972c6597b01c009c43676692ea4"
     },
     "工程参数.json": {
-      "bytes": 42075,
-      "sha256": "77f077f26cfb3bf1da719dddfb763c85cde404df7f08affec90daf74c432c6a4"
+      "bytes": 39905,
+      "sha256": "25b0c351f32e22f1ee00752e6fafcb440bbe575d8ac692ad8caf9f0870921946"
     },
     "建模说明.md": {
-      "bytes": 16900,
-      "sha256": "648b59a66cfc7e055f55ee89506c48706332cdf723c6db5797c5bfb29bc6ff31"
+      "bytes": 16780,
+      "sha256": "9836eb454b99fc4bbcda2266519ee0560e4e9d1df4bf9c633e9f158214bf2efc"
     },
     "构件单体清单.json": {
-      "bytes": 405937,
-      "sha256": "d8bd6e71eba2eee5267aee3d6b80865d300ffcb467be4d976b3be8ffa4854df5"
+      "bytes": 391738,
+      "sha256": "d42334d318b71329bbe4786d32aaae554e6d9f8eec903fcbfe227c36f1ad48c0"
     },
     "路面路基参数.json": {
-      "bytes": 8073,
-      "sha256": "044b0e90509058847d8640155c81aa0763daca8f82a82325b058d849bef28d5c"
+      "bytes": 7757,
+      "sha256": "2117c33ddcf5d4a803c9dfb398e3c56c66f207ae2d325275be02a8b82abd3807"
     }
   },
   "validation": {
