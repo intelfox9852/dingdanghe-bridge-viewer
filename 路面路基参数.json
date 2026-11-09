@@ -1,0 +1,317 @@
+{
+  "bridgeLayers": [
+    {
+      "unit": "左幅第1联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42173.89,
+        42263.81
+      ]
+    },
+    {
+      "unit": "左幅第2联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42263.89,
+        42383.81
+      ]
+    },
+    {
+      "unit": "左幅第3联",
+      "levelingNominal_m": 0.1,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "第3联典型横断面及调平层构造图",
+      "station": [
+        42383.89,
+        42485.81
+      ]
+    },
+    {
+      "unit": "左幅第4联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42485.89,
+        42605.81
+      ]
+    },
+    {
+      "unit": "左幅第5联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42605.89,
+        42725.81
+      ]
+    },
+    {
+      "unit": "左幅第6联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42725.89,
+        42845.81
+      ]
+    },
+    {
+      "unit": "左幅第7联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42845.89,
+        42965.81
+      ]
+    },
+    {
+      "unit": "左幅第8联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42965.89,
+        43085.81
+      ]
+    },
+    {
+      "unit": "左幅第9联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43085.89,
+        43205.81
+      ]
+    },
+    {
+      "unit": "左幅第10联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43205.89,
+        43325.299999999996
+      ]
+    },
+    {
+      "unit": "左幅第11联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.1,
+      "width_m": 11.975,
+      "source": "S4-3-8-39",
+      "station": [
+        43326.4,
+        43510.299999999996
+      ]
+    },
+    {
+      "unit": "左幅第12联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43511.4,
+        43630.81
+      ]
+    },
+    {
+      "unit": "右幅第1联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42173.89,
+        42263.81
+      ]
+    },
+    {
+      "unit": "右幅第2联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42263.89,
+        42383.81
+      ]
+    },
+    {
+      "unit": "右幅第3联",
+      "levelingNominal_m": 0.1,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "第3联典型横断面及调平层构造图",
+      "station": [
+        42383.89,
+        42485.81
+      ]
+    },
+    {
+      "unit": "右幅第4联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42485.89,
+        42605.81
+      ]
+    },
+    {
+      "unit": "右幅第5联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42605.89,
+        42725.81
+      ]
+    },
+    {
+      "unit": "右幅第6联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42725.89,
+        42845.81
+      ]
+    },
+    {
+      "unit": "右幅第7联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42845.89,
+        42965.81
+      ]
+    },
+    {
+      "unit": "右幅第8联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        42965.89,
+        43085.81
+      ]
+    },
+    {
+      "unit": "右幅第9联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43085.89,
+        43205.81
+      ]
+    },
+    {
+      "unit": "右幅第10联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43205.89,
+        43325.299999999996
+      ]
+    },
+    {
+      "unit": "右幅第11联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.1,
+      "width_m": 11.975,
+      "source": "S4-3-8-39",
+      "station": [
+        43326.4,
+        43510.299999999996
+      ]
+    },
+    {
+      "unit": "右幅第12联",
+      "levelingNominal_m": 0.08,
+      "asphaltNominal_m": 0.105,
+      "width_m": 11.975,
+      "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
+      "station": [
+        43511.4,
+        43630.81
+      ]
+    }
+  ],
+  "roadExtensions": [
+    {
+      "unit": "左幅0号台台后道路",
+      "station": [
+        42073.85,
+        42173.890999999996
+      ],
+      "length_m": 100.0
+    },
+    {
+      "unit": "左幅46号台台后道路",
+      "station": [
+        43630.809,
+        43730.85
+      ],
+      "length_m": 100.0
+    },
+    {
+      "unit": "右幅0号台台后道路",
+      "station": [
+        42073.85,
+        42173.890999999996
+      ],
+      "length_m": 100.0
+    },
+    {
+      "unit": "右幅46号台台后道路",
+      "station": [
+        43630.809,
+        43730.85
+      ],
+      "length_m": 100.0
+    }
+  ],
+  "lanesPerCarriageway": 2,
+  "markingStatus": "用户确认双向4车道；具体标线细部为展示示意，未作为交通工程设计",
+  "groundSource": {
+    "source": "K（原始地面线）.DMX；K（原始横地线）.HDX，ABS横距/绝对高程",
+    "dmxPoints": 1349,
+    "hdxSections": 712,
+    "sha256": {
+      "K（原始地面线）.DMX": "8a269aa9fb501a35748be97161965f83ee706bf0f33561ebb5aa81546584166f",
+      "K（原始横地线）.HDX": "7bdc86de9602ebf3a788f4279ad075ea10000910bd9553347761ff7dcea06d16"
+    },
+    "displayContact": "坡脚优先与当前单层三维地形三角面求交；范围外回退DMX/HDX插值",
+    "terrainSHA256": "655b9633c08d9acaa35e7281f57b83f54385680d61e3347f91067a895335fc0b"
+  },
+  "transitionStatus": "联界前后各3m作平顺过渡，名义厚度在正常截面按图，过渡厚度待竖向控制",
+  "roadbedStatus": "两端各100m，坡率1:1.5及路面结构为展示示意，路基脚按原始地面线插值"
+}

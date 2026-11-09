@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-10",
+  "revision": "73f54fcde5b0",
+  "sourceModelSHA256": "3501086fd6e2f67a06f2583079c7f637e213b4c43d4363c1d0a91985f64bf79e",
+  "publishedModelSHA256": "d34315953e19efac99299da72f6dad7a6ea80dc9fd4594423189c98e9993e75f",
+  "components": 3394,
+  "individualMembers": {
+    "承台": 18,
+    "桩基": 224,
+    "系梁": 70,
+    "支座垫石": 472,
+    "支座": 472,
+    "盖梁": 86,
+    "墩柱": 176,
+    "伸缩缝": 4
+  },
+  "files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cross_sections.js": {
+      "bytes": 6216,
+      "sha256": "e53d13cd00814b278dca5cf1b675a6bf4314e91faa28c3aba36c65f44d736c4b"
+    },
+    "index.html": {
+      "bytes": 6879,
+      "sha256": "4790dfcc91f8dbcd46762792f6b2b4ff01476bbeba97dd2720f12fee3ce5e3e4"
+    },
+    "model.json.gz": {
+      "bytes": 19525648,
+      "sha256": "8e6e2a3633922ccf80f199192599de510902354320082fe6100853db046db2c8"
+    },
+    "README.md": {
+      "bytes": 940,
+      "sha256": "7c82a8491be0fa3ae8368896a1d11933384a132e8dc7c473ef9a03977a14a358"
+    },
+    "terrain/测绘底图.png": {
+      "bytes": 236843,
+      "sha256": "643872274d198887b9328b3abcc9fc01179ec75a22650e2ace6e3c1e46c7aa19"
+    },
+    "terrain.js": {
+      "bytes": 3716,
+      "sha256": "dfe60884e516d7f85342d7d209b57cd1b95c3438c57f6899ed5782b3d3f84a9a"
+    },
+    "terrain.json": {
+      "bytes": 793894,
+      "sha256": "655b9633c08d9acaa35e7281f57b83f54385680d61e3347f91067a895335fc0b"
+    },
+    "three-water.mjs": {
+      "bytes": 4591,
+      "sha256": "b711d494eb4c1a083eb0e5330a0e53f6fc383da0e89d9743b26db90962443cba"
+    },
+    "vendor/OrbitControls.js": {
+      "bytes": 40918,
+      "sha256": "e7fca2fe9e7670a828af9b28084669a5909445b7f36f1f26cee9bf8f2961c32c"
+    },
+    "vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "vendor/three.core.js": {
+      "bytes": 1474799,
+      "sha256": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578"
+    },
+    "vendor/three.tsl.js": {
+      "bytes": 1065544,
+      "sha256": "d8f3cdb8b85b799a5631bd9a8d77e185d88ce1eb1bb051f48b332728a5423e3f"
+    },
+    "vendor/three.webgpu.js": {
+      "bytes": 1350894,
+      "sha256": "eafead3154ec06093f3108bddceab360f048a6fcebd7c085d5aae0ab5404bd25"
+    },
+    "viewer.js": {
+      "bytes": 16694,
+      "sha256": "1eb5994f1c869663abf64226c76e3725671c45130aed9b9095070002e19a6024"
+    },
+    "一般构造核查报告.md": {
+      "bytes": 10195,
+      "sha256": "b9b4bbc0c0e09fed431e5799b95efd74e6315d6c4f4914c25a64ac90c1afe6f3"
+    },
+    "叮当河特大桥.obj.gz": {
+      "bytes": 20513155,
+      "sha256": "1f74aa7fc3dcfa7cf0101e8c4a3ca4cbaf3e0972c6597b01c009c43676692ea4"
+    },
+    "工程参数.json": {
+      "bytes": 42075,
+      "sha256": "77f077f26cfb3bf1da719dddfb763c85cde404df7f08affec90daf74c432c6a4"
+    },
+    "建模说明.md": {
+      "bytes": 16900,
+      "sha256": "648b59a66cfc7e055f55ee89506c48706332cdf723c6db5797c5bfb29bc6ff31"
+    },
+    "构件单体清单.json": {
+      "bytes": 405937,
+      "sha256": "d8bd6e71eba2eee5267aee3d6b80865d300ffcb467be4d976b3be8ffa4854df5"
+    },
+    "路面路基参数.json": {
+      "bytes": 8073,
+      "sha256": "044b0e90509058847d8640155c81aa0763daca8f82a82325b058d849bef28d5c"
+    }
+  },
+  "validation": {
+    "backends": [
+      "WebGPU",
+      "WebGL2"
+    ],
+    "errors": 0,
+    "ribAbutments": "10块肋板：梯形+50cm矩形段，顶长140cm、底长357.5cm；承台570cm、桩距350cm"
+  }
+}
