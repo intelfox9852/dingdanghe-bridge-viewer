@@ -1217,24 +1217,33 @@
   },
   "pending": [
     "左右幅平面中心偏距及全线横断面尺寸链需复核，当前按13.025m幅宽及0.95m中央间隙布置；标高参考偏距5.5m及铺装0.185m由主桥墩顶高程闭合反算。",
-    "30m通用图QT-2-1/QT-2-3原图未在本目录找到；引桥采用目录确认的H1.60m/B13.025m及第3联断面作概化，非最终预制梁详模。",
+    "30m通用图QT-2-1/QT-2-3原图未在本目录找到；普通断面按S4-3-4Ⅲ—Ⅲ原生轮廓恢复，局部未注尺寸为按比例恢复，端部加厚及横隔板仍待详图。",
     "46号右台存在不同承台高程数据；当前保留首组表值，冲突未定版。",
     "30m引桥支座型号、厂制支座内部构造、盖梁挡块局部详图仍缺通用图；当前对应实体明确标注占位。",
     "0—8号斜交支承线已按共同路线中心基准定位；0/46号基础中心相对支承线的纵向偏置仍待正式尺寸闭合。",
     "46号右台高程表冲突保留原值；肋板已按一般构造侧面恢复，承台系梁局部尺寸待钢筋详图。",
     "锥坡坡率、面层和踏步按图；坡脚及高差接当前测绘地形插值，不代表设计逐点放样。",
-    "齿板A1—C2已核一般图，尚未逐束闭合锚固定位，暂不补造；主桥与第3联以外的上部通用断面仍待原通用图。",
     "同号S4-3-8-38副本(2)型号前缀FPB，与同名DWG及配套2023.11 PDF的KZQZ不同；本版按后两者建外包络，正式产品需定版。",
     "主桥纵向钢束按CAD中心线恢复；显示束体为等效包络，未逐根建立钢绞线及锚具，仍不作工程量依据。",
     "地形以已有高程为主合并，缺测区和河道延伸段为参考插值；河面1.77m为参考水位。"
   ],
+  "approach30m": {
+    "source": "S4-3-4 Ⅲ—Ⅲ；S4-3-7",
+    "beams": 312,
+    "wetJointMeshes": 78,
+    "halfWidth_m": 13.025,
+    "height_m": 1.6,
+    "pending": "QT通用详图缺失；端部加厚、横隔板及普通钢筋未补造"
+  },
   "surfacingAndRoadbed": {
     "bridgeLayers": [
       {
         "unit": "左幅第1联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42173.89,
@@ -1245,7 +1254,9 @@
         "unit": "左幅第2联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42263.89,
@@ -1256,7 +1267,9 @@
         "unit": "左幅第3联",
         "levelingNominal_m": 0.1,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "第3联典型横断面及调平层构造图",
         "station": [
           42383.89,
@@ -1267,7 +1280,9 @@
         "unit": "左幅第4联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42485.89,
@@ -1278,7 +1293,9 @@
         "unit": "左幅第5联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42605.89,
@@ -1289,7 +1306,9 @@
         "unit": "左幅第6联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42725.89,
@@ -1300,7 +1319,9 @@
         "unit": "左幅第7联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42845.89,
@@ -1311,7 +1332,9 @@
         "unit": "左幅第8联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42965.89,
@@ -1322,7 +1345,9 @@
         "unit": "左幅第9联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43085.89,
@@ -1333,7 +1358,9 @@
         "unit": "左幅第10联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43205.89,
@@ -1344,7 +1371,9 @@
         "unit": "左幅第11联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.1,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-8-39",
         "station": [
           43326.4,
@@ -1355,7 +1384,9 @@
         "unit": "左幅第12联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43511.4,
@@ -1366,7 +1397,9 @@
         "unit": "右幅第1联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42173.89,
@@ -1377,7 +1410,9 @@
         "unit": "右幅第2联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42263.89,
@@ -1388,7 +1423,9 @@
         "unit": "右幅第3联",
         "levelingNominal_m": 0.1,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "第3联典型横断面及调平层构造图",
         "station": [
           42383.89,
@@ -1399,7 +1436,9 @@
         "unit": "右幅第4联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42485.89,
@@ -1410,7 +1449,9 @@
         "unit": "右幅第5联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42605.89,
@@ -1421,7 +1462,9 @@
         "unit": "右幅第6联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42725.89,
@@ -1432,7 +1475,9 @@
         "unit": "右幅第7联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42845.89,
@@ -1443,7 +1488,9 @@
         "unit": "右幅第8联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           42965.89,
@@ -1454,7 +1501,9 @@
         "unit": "右幅第9联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43085.89,
@@ -1465,7 +1514,9 @@
         "unit": "右幅第10联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43205.89,
@@ -1476,7 +1527,9 @@
         "unit": "右幅第11联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.1,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-8-39",
         "station": [
           43326.4,
@@ -1487,7 +1540,9 @@
         "unit": "右幅第12联",
         "levelingNominal_m": 0.08,
         "asphaltNominal_m": 0.105,
-        "width_m": 11.975,
+        "levelingWidth_m": 11.975,
+        "asphaltWidth_m": 11.975,
+        "widthBasis": "最新用户要求：调平层与铺装同宽，止于护栏内侧",
         "source": "S4-3-4引桥横断面（8cm＋10.5cm）",
         "station": [
           43511.4,
@@ -2167,5 +2222,258 @@
     ],
     "pathBase": 42160.0,
     "pathStep": 0.5
+  },
+  "anchorBlocks": {
+    "date": "2026-11-10",
+    "revision": "tooth-sections",
+    "source": "S4-3-8-13三视图及S4-3-8-3定位",
+    "count": 136,
+    "counts": {
+      "B1": 48,
+      "B2": 24,
+      "C1": 24,
+      "C2": 8,
+      "A1": 8,
+      "A2": 8,
+      "A3": 8,
+      "A4": 8
+    },
+    "rootEmbed_m": 0,
+    "scope": "自由边界按A-A/B-B/断面求交；根部接现有箱室，取消平板内部埋入；不改梁体及钢束",
+    "pending": "现有钢束端点与原图齿板端面残差逐束保留；厂家锚孔、锚具及普通钢筋未展开"
+  },
+  "barrierDrip": {
+    "source": "S4-3-12-1墙式护栏一般构造，断面及附注3",
+    "hangingUnits": 48,
+    "abutmentUnitsWithoutHangingSkirt": 8,
+    "reservedWidth_m": 0.1,
+    "drop_m": 0.06,
+    "chamfer_deg": 45,
+    "note": "护栏下部接结构梁面；引桥按实际18cm翼缘厚度适配，主桥20cm；结合区不作为重复工程量",
+    "chamferClosure": "梁底求交收口，主引桥预留100mm同浇带，无反折台阶",
+    "flatBottom_m": 0.1
+  },
+  "barrierJoint": {
+    "source": "S4-3-12-1墙式护栏一般构造图，挂壁断面及附注3",
+    "reservedStrip_m": 0.1,
+    "drop_m": 0.06,
+    "flatBottom_m": 0.1,
+    "chamfer_deg": 45,
+    "trimmedBeamMeshes": 262,
+    "hangingBarrierMeshes": 48,
+    "note": "梁边与护栏采用互补边界；第三联按实际梁边轮廓和横坡衔接，耳墙段无挂檐"
+  },
+  "approachPrestress": {
+    "date": "2026-11-10",
+    "source": "S4-3-9-4 第3联预制箱梁钢束构造图；0 钢束张嘉诚-叮当河特大桥.xlsx",
+    "count": 320,
+    "beamCount": 32,
+    "bundles": {
+      "N1": 64,
+      "N2": 64,
+      "N3": 64,
+      "N4": 64,
+      "N5": 64
+    },
+    "scope": "仅第3联25.5m箱梁；其余39个30m引桥跨缺QT-2-1/2-3钢束图，未补造",
+    "addedPlanBendCount": 256,
+    "beams": [
+      {
+        "beam": "8-1",
+        "side": "左",
+        "hostLength_m": 23.198423946576522,
+        "scheduleL0_m": 23.218000000000004
+      },
+      {
+        "beam": "8-2",
+        "side": "左",
+        "hostLength_m": 23.778906360006534,
+        "scheduleL0_m": 23.803
+      },
+      {
+        "beam": "8-3",
+        "side": "左",
+        "hostLength_m": 24.35939001158836,
+        "scheduleL0_m": 24.386999999999997
+      },
+      {
+        "beam": "8-4",
+        "side": "左",
+        "hostLength_m": 24.93987435693937,
+        "scheduleL0_m": 24.971
+      },
+      {
+        "beam": "8-5",
+        "side": "右",
+        "hostLength_m": 25.740127752347835,
+        "scheduleL0_m": 25.776
+      },
+      {
+        "beam": "8-6",
+        "side": "右",
+        "hostLength_m": 26.320613609745422,
+        "scheduleL0_m": 26.361
+      },
+      {
+        "beam": "8-7",
+        "side": "右",
+        "hostLength_m": 26.901099649036357,
+        "scheduleL0_m": 26.945
+      },
+      {
+        "beam": "8-8",
+        "side": "右",
+        "hostLength_m": 27.481586623355682,
+        "scheduleL0_m": 27.529
+      },
+      {
+        "beam": "9-1",
+        "side": "左",
+        "hostLength_m": 23.330839060943823,
+        "scheduleL0_m": 23.397
+      },
+      {
+        "beam": "9-2",
+        "side": "左",
+        "hostLength_m": 23.875412797276226,
+        "scheduleL0_m": 23.945
+      },
+      {
+        "beam": "9-3",
+        "side": "左",
+        "hostLength_m": 24.42002610987426,
+        "scheduleL0_m": 24.493000000000002
+      },
+      {
+        "beam": "9-4",
+        "side": "左",
+        "hostLength_m": 24.964620031570615,
+        "scheduleL0_m": 25.041
+      },
+      {
+        "beam": "9-5",
+        "side": "右",
+        "hostLength_m": 25.715384326481303,
+        "scheduleL0_m": 25.796999999999997
+      },
+      {
+        "beam": "9-6",
+        "side": "右",
+        "hostLength_m": 26.25997796665414,
+        "scheduleL0_m": 26.426
+      },
+      {
+        "beam": "9-7",
+        "side": "右",
+        "hostLength_m": 26.80458166164432,
+        "scheduleL0_m": 26.893
+      },
+      {
+        "beam": "9-8",
+        "side": "右",
+        "hostLength_m": 27.349156470840978,
+        "scheduleL0_m": 27.441
+      },
+      {
+        "beam": "10-1",
+        "side": "左",
+        "hostLength_m": 25.394051490325634,
+        "scheduleL0_m": 25.474
+      },
+      {
+        "beam": "10-2",
+        "side": "左",
+        "hostLength_m": 25.379401762056467,
+        "scheduleL0_m": 25.46
+      },
+      {
+        "beam": "10-3",
+        "side": "左",
+        "hostLength_m": 25.364751495081702,
+        "scheduleL0_m": 25.445
+      },
+      {
+        "beam": "10-4",
+        "side": "左",
+        "hostLength_m": 25.35010176768973,
+        "scheduleL0_m": 25.43
+      },
+      {
+        "beam": "10-5",
+        "side": "右",
+        "hostLength_m": 25.329894436911392,
+        "scheduleL0_m": 25.41
+      },
+      {
+        "beam": "10-6",
+        "side": "右",
+        "hostLength_m": 25.315244711189585,
+        "scheduleL0_m": 25.395
+      },
+      {
+        "beam": "10-7",
+        "side": "右",
+        "hostLength_m": 25.3005944397986,
+        "scheduleL0_m": 25.38
+      },
+      {
+        "beam": "10-8",
+        "side": "右",
+        "hostLength_m": 25.285944712411226,
+        "scheduleL0_m": 25.366
+      },
+      {
+        "beam": "11-1",
+        "side": "左",
+        "hostLength_m": 25.394051564162684,
+        "scheduleL0_m": 25.434
+      },
+      {
+        "beam": "11-2",
+        "side": "左",
+        "hostLength_m": 25.379398021810704,
+        "scheduleL0_m": 25.42
+      },
+      {
+        "beam": "11-3",
+        "side": "左",
+        "hostLength_m": 25.36475446717683,
+        "scheduleL0_m": 25.405
+      },
+      {
+        "beam": "11-4",
+        "side": "左",
+        "hostLength_m": 25.350100923740378,
+        "scheduleL0_m": 25.39
+      },
+      {
+        "beam": "11-5",
+        "side": "右",
+        "hostLength_m": 25.329908148893878,
+        "scheduleL0_m": 25.37
+      },
+      {
+        "beam": "11-6",
+        "side": "右",
+        "hostLength_m": 25.315254611998505,
+        "scheduleL0_m": 25.355
+      },
+      {
+        "beam": "11-7",
+        "side": "右",
+        "hostLength_m": 25.300591089567106,
+        "scheduleL0_m": 25.34
+      },
+      {
+        "beam": "11-8",
+        "side": "右",
+        "hostLength_m": 25.285937547621117,
+        "scheduleL0_m": 25.326
+      }
+    ],
+    "scheduleDuctTotal_m": 8038.595203248033,
+    "modelCenterlineTotal_m": 8020.86388362992,
+    "lengthStatus": "原表参数与下料/孔道长度独立保留；现有路线及梁端与逐梁表有差异，按附注8只适配中间直线段，差值逐束显示",
+    "maxModelVsScheduleDuctDifference_m": 0.2733870170930679
   }
 }

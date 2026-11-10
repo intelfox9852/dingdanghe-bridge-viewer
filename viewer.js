@@ -1,15 +1,17 @@
 import * as T from 'three';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {loadTerrain} from './terrain.js?v=73f54fcde5b0';
-import {setupCrossSections} from './cross_sections.js?v=73f54fcde5b0';
+import {loadTerrain} from './terrain.js?v=d239f6f2d46b';
+import {setupCrossSections} from './cross_sections.js?v=d239f6f2d46b';
+import {setupSection3D} from './section_3d.js?v=d239f6f2d46b';
 const $=s=>document.getElementById(s),scene=new T.Scene();scene.background=new T.Color('#e7edf2');
 const camera=new T.PerspectiveCamera(40,innerWidth/innerHeight,.5,15000),renderer=new T.WebGPURenderer({antialias:true,logarithmicDepthBuffer:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);document.body.prepend(renderer.domElement);
 await renderer.init();
 const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;controls.maxDistance=6000;controls.minDistance=1;
 scene.add(new T.HemisphereLight(0xffffff,0x8897a3,2.1));const light=new T.DirectionalLight(0xffffff,2.3);light.position.set(-200,400,200);scene.add(light);
-const response=await fetch('./model.json.gz?v=73f54fcde5b0');if(!response.ok)throw Error('模型读取失败');const model=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
-const steelCats=new Set(['顶板束','腹板束','底板束']),fadeCats=new Set(['主桥箱梁','引桥箱梁','调平层','桥面铺装','护栏','白色标线']);
+const response=await fetch('./model.json.gz?v=d239f6f2d46b');if(!response.ok)throw Error('模型读取失败');const model=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
+const steelCats=new Set(['顶板束','腹板束','底板束','引桥钢束']),fadeCats=new Set(['主桥箱梁','引桥箱梁','调平层','桥面铺装','护栏','白色标线']);
+const steelScope=document.createElement('small');steelScope.textContent='引桥钢束：已建第3联25.5m梁；其余30m跨待QT钢束图。';$('steelLayers').after(steelScope);
 const cats=new Map(),units=new Map(),hiddenUnits=new Set();let detailState=null,detailMeshes=null;let selected=null,highlight=null,highlightWire=null,mode='both',measuring=false,points=[],measureLine=null,xray=false,viewDir=new T.Vector3(.55,.42,.85);
 function build(list){const pos=[],indices=[],edges=[],ranges=[];let v=0,tri=0;
  for(const m of list){for(let i=0;i<m.v.length;i+=3)pos.push(m.v[i],m.v[i+2],-m.v[i+1]);for(const i of m.f)indices.push(i+v);for(const i of m.w)edges.push(i+v);ranges.push({start:tri,end:tri+m.f.length/3,m});tri+=m.f.length/3;v+=m.v.length/3}
@@ -23,7 +25,7 @@ const allBounds=new T.Box3();for(const c of cats.values())allBounds.union(c.soli
 function fit(box,dir=viewDir){const center=box.getCenter(new T.Vector3()),d=dir.clone().normalize(),right=new T.Vector3().crossVectors(new T.Vector3(0,1,0),d).normalize(),up=new T.Vector3().crossVectors(d,right).normalize(),tanV=Math.tan(camera.fov*Math.PI/360),tanH=tanV*camera.aspect;let distance=12;for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z]){const p=new T.Vector3(x,y,z).sub(center);distance=Math.max(distance,Math.abs(p.dot(up))/tanV+p.dot(d),Math.abs(p.dot(right))/tanH+p.dot(d))}distance*=1.15;controls.target.copy(center);camera.position.copy(center).add(d.multiplyScalar(distance));camera.near=Math.max(.05,distance/20000);camera.updateProjectionMatrix();controls.update()}
 function unitBounds(list){const b=new T.Box3();for(const m of list)for(let i=0;i<m.v.length;i+=3)b.expandByPoint(new T.Vector3(m.v[i],m.v[i+2],-m.v[i+1]));return b}
 const mainList=model.meshes.filter(m=>m.cat==='主桥箱梁'||(/(39|40|41|42)号/.test(m.unit)));const mainBounds=unitBounds(mainList);
-const terrain=await loadTerrain(scene,camera);const sections=setupCrossSections(model);$('waterEffect').onchange=()=>terrain.setEffect($('waterEffect').value);$('waterOpacity').oninput=()=>{terrain.setOpacity(Number($('waterOpacity').value)/100);$('waterOpacityValue').textContent=$('waterOpacity').value+'%'};
+const terrain=await loadTerrain(scene,camera);const sections=setupCrossSections(model);const section3D=setupSection3D({model,sections});$('waterEffect').onchange=()=>terrain.setEffect($('waterEffect').value);$('waterOpacity').oninput=()=>{terrain.setOpacity(Number($('waterOpacity').value)/100);$('waterOpacityValue').textContent=$('waterOpacity').value+'%'};
 $('terrainMode').onchange=()=>terrain.setMode($('terrainMode').value);$('water').onchange=()=>terrain.setWater($('water').checked);$('survey').onchange=()=>terrain.setPoints($('survey').checked);$('site').onclick=()=>fit(terrain.bounds);
 function setXray(enabled){xray=enabled;const opacity=Number($('opacity').value)/100;for(const [name,c] of cats){if(fadeCats.has(name)){const m=c.solid.material;m.transparent=xray;m.opacity=xray?opacity:1;m.depthWrite=!xray;m.side=xray?T.FrontSide:T.DoubleSide;m.needsUpdate=true;c.solid.renderOrder=xray?2:0}}$('xray').classList.toggle('active',xray);$('opacityRow').hidden=!xray;$('opacityValue').textContent=$('opacity').value+'%';setMode()}
 $('xray').onclick=()=>setXray(!xray);$('opacity').oninput=()=>setXray(true);
@@ -51,8 +53,8 @@ $('hide').onclick=()=>{const h=$('menu').hidden=!$('menu').hidden;$('hide').text
 const labelNodes=model.labels.map((l,i)=>{const el=document.createElement('span');el.className='label';el.textContent=l.name;$('labels').append(el);return {...l,el,p3:new T.Vector3(l.p[0],l.p[2],-l.p[1])}});
 let count=0;renderer.setAnimationLoop(()=>{controls.update();terrain.tick(performance.now()/1000);if((count++%3)===0){const wide=camera.position.distanceTo(controls.target)>600;for(let i=0;i<labelNodes.length;i++){const l=labelNodes[i],v=l.p3.clone().project(camera);const show=$('numbers').checked&&v.z<1&&v.z>-1&&Math.abs(v.x)<1&&Math.abs(v.y)<1&&(!wide||i%4===0||i>=39);l.el.style.display=show?'block':'none';if(show){l.el.style.left=(v.x*.5+.5)*innerWidth+'px';l.el.style.top=(-v.y*.5+.5)*innerHeight+'px'}}}renderer.render(scene,camera)});
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
-fit(mainBounds);setMode();if(new URLSearchParams(location.search).get('view')==='prestress')setXray(true);const backend=renderer.backend.isWebGPUBackend?'WebGPU':'WebGL2';$('status').textContent=`${backend} · ${model.meshes.length}构件 · 340束纵向钢束 · ${terrain.data.meta.observations}个高程控制点 · 高程原比例`;
-window.bridge={model,cats,units,hiddenUnits,get highlight(){return highlight},get highlightWire(){return highlightWire},camera,controls,renderer,terrain,sections,setXray,select,fit,unitBounds,mainBounds,allBounds,get selected(){return selected},get mode(){return mode},project(m){const p=unitBounds([m]).getCenter(new T.Vector3()).project(camera);return {x:(p.x*.5+.5)*innerWidth,y:(-.5*p.y+.5)*innerHeight}}};window.ready=true;
+fit(mainBounds);setMode();if(['prestress','approach-prestress'].includes(new URLSearchParams(location.search).get('view')))setXray(true);const backend=renderer.backend.isWebGPUBackend?'WebGPU':'WebGL2';$('status').textContent=`${backend} · ${model.meshes.length}构件 · 主桥 ${model.meshes.filter(m=>['顶板束','腹板束','底板束'].includes(m.cat)).length}束 · 引桥 ${model.meshes.filter(m=>m.approachPrestress).length}束 · ${terrain.data.meta.observations}个高程控制点 · 高程原比例`;
+window.bridge={model,cats,units,hiddenUnits,get highlight(){return highlight},get highlightWire(){return highlightWire},camera,controls,renderer,terrain,sections,section3D,setXray,select,fit,unitBounds,mainBounds,allBounds,get selected(){return selected},get mode(){return mode},project(m){const p=unitBounds([m]).getCenter(new T.Vector3()).project(camera);return {x:(p.x*.5+.5)*innerWidth,y:(-.5*p.y+.5)*innerHeight}}};window.ready=true;
 
 // Review the corrected drawings at a useful scale; existing layer visibility stays user-controlled.
 const detailSelect=document.createElement('select');detailSelect.id='detailPreset';
@@ -75,6 +77,12 @@ detailButton.onclick=()=>{const key=detailSelect.value;const list=model.meshes.f
  terrain.setMode('off');$('numbers').checked=false;detailExit.hidden=false;setMode();cancelSelection();fit(unitBounds(list),new T.Vector3(.65,.40,-1));};
 const detailRow=document.createElement('div');detailRow.className='buttons';detailRow.append(detailSelect,detailButton,detailExit);$('sectionOpen').parentElement.after(detailRow);
 const approachView=new URLSearchParams(location.search).get('view');
+if(approachView==='approach-prestress'){const list=model.meshes.filter(m=>m.approachPrestress);fit(unitBounds(list),new T.Vector3(.15,.65,1));}
+if(approachView==='tooth-sections'){
+ $('sectionOpen').click();$('sectionPreset').selectedIndex=6;$('sectionPreset').dispatchEvent(new Event('change'));
+ $('sectionView').value='3d';$('sectionView').dispatchEvent(new Event('change'));
+ $('section3DXray').checked=true;$('section3DXray').dispatchEvent(new Event('change'));
+}
 if(['west-abutment','east-abutment'].includes(approachView)){
  const n=approachView==='west-abutment'?0:46;
  const list=model.meshes.filter(m=>m.unit.startsWith(`${n}号台`)||m.unit.includes(`${n}号台台后道路`));
