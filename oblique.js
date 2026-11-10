@@ -49,7 +49,9 @@ export async function setupOblique({scene,camera,renderer,terrain}){
   tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=16;tiles.loadAncestors=true;tiles.loadSiblings=true;
   tiles.lruCache.maxSize=180;tiles.lruCache.minSize=120;tiles.downloadQueue.maxJobs=3;tiles.parseQueue.maxJobs=1;
   const repairResponse=await fetch('./oblique/surface-repair.json');if(!repairResponse.ok)throw Error('实景修补范围配置未生成');
-  const repairConfig=await repairResponse.json();repair=createSurfaceRepair({tiles,bounds:[x0,y0,x1,y1],water:repairConfig.water});
+  const repairConfig=await repairResponse.json();
+  repair=config.preRepaired?{add(){},remove(){},dispose(){},setEnabled(){},enabled:true,get stats(){return {models,holes:0,pending:0,errors:0,pendingBlackMeshes:0}},details:[]}:createSurfaceRepair({tiles,bounds:[x0,y0,x1,y1],water:repairConfig.water});
+  if(config.preRepaired){$('obliqueRepair').disabled=true;$('obliqueRepair').parentElement.lastChild.textContent='已离线重建修补（无动态替换）'}
   tiles.addEventListener('load-model',({scene:content})=>{
    models++;content.traverse(o=>{if(!o.isMesh)return;const old=Array.isArray(o.material)?o.material:[o.material];
     const converted=old.map(m=>new T.MeshBasicMaterial({map:m.map,color:m.color,side:T.DoubleSide,transparent:m.transparent,opacity:m.opacity,alphaTest:m.alphaTest}));
@@ -73,7 +75,7 @@ export async function setupOblique({scene,camera,renderer,terrain}){
    if(group.visible!==visible){group.visible=visible;setTerrainOblique(visible&&models>0)}
    if(!visible)return;
    camera.updateMatrixWorld();tiles.group.updateMatrixWorld(true);tiles.update();
-   const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${failures?' · 失败 '+failures:''}`;const s=repair.stats;$('obliqueRepairStatus').textContent=repair.enabled?`表面修补已开启 · 已处理 ${s.models} 个网格${s.pending?' · 继续处理 '+s.pending+' 个':''}${s.errors?' · 跳过 '+s.errors+' 个异常':''}`:'修补已关闭，显示原始表面';lastText=now}
+   const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${failures?' · 失败 '+failures:''}`;const s=repair.stats;$('obliqueRepairStatus').textContent=config.preRepaired?'已加载离线重建纹理和补面，无运行时修补':repair.enabled?`表面修补已开启 · 已处理 ${s.models} 个网格${s.pending?' · 继续处理 '+s.pending+' 个':''}${s.errors?' · 跳过 '+s.errors+' 个异常':''}`:'修补已关闭，显示原始表面';lastText=now}
   };
   current.dispose=()=>{disposed=true;tiles.dispose();repair.dispose();draco.dispose();scene.remove(group);setTerrainOblique(false)};
   status.textContent=`实景入口已就绪，范围内 ${config.retainedRootTiles}/${config.sourceRootTiles} 个根瓦片`;

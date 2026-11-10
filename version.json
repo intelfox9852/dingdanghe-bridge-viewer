@@ -1,12 +1,13 @@
 {
   "date": "2026-11-10",
-  "revision": "6e07cff7b6c7",
+  "revision": "a1b9d191607c",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
-  "modelRevision": "surface-repair-green-first-frame",
+  "modelRevision": "offline-rebuilt-surface",
   "staticOblique": true,
-  "patchColor": "#254f39",
+  "patchColor": "#3d5b50",
   "firstFrameRepaired": true,
+  "offlineRepaired": true,
   "files": {
     ".nojekyll": {
       "bytes": 0,
@@ -18,11 +19,11 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "fb62f4c71c3822034ce3360767b90faf72e2c366a9eff6689a7dd17fd62a9a1b"
+      "sha256": "dc936d2f0ea30845fc389bd895d768d68aa76d6b7ade6de67930df72d6581c6a"
     },
     "model_loader.js": {
       "bytes": 782,
-      "sha256": "07bb176d3e3179595f103ffa6fe591d7f700859ea9e09905db06f533346a5964"
+      "sha256": "dc2a742f66443f066b3518954598b801823bf002ef2855add0facbb93b96380e"
     },
     "model_worker.js": {
       "bytes": 5542,
@@ -1005,8 +1006,8 @@
       "sha256": "1e213bcd1b8e5519f5940673a9917b302f9cf2b192256a5c863a536fb90173f4"
     },
     "oblique/config.json": {
-      "bytes": 4830,
-      "sha256": "33f95dd6ee039451558810a62ab7396b3bdcf9c15c60e1b4ad23a2dea7bc9d56"
+      "bytes": 4839,
+      "sha256": "786eb3cee803d19440bd743224d03c6340ac10317a9035952175ea7d978ffbba"
     },
     "oblique/lod/6d3a5137bf81/coverage.png": {
       "bytes": 9146,
@@ -1048,6 +1049,1022 @@
       "bytes": 922372,
       "sha256": "e8d34800c264a3179664e6239b8a75b104729c6874daf726acb22a06daedaf33"
     },
+    "oblique/rebuilt-surface/006ffea9c18617c7b080.b3dm": {
+      "bytes": 41888,
+      "sha256": "006ffea9c18617c7b080ff261ad93c6796980dfc5b59d7c47a3959d6493f45be"
+    },
+    "oblique/rebuilt-surface/00dcf021379b73412ee6.b3dm": {
+      "bytes": 217288,
+      "sha256": "00dcf021379b73412ee6f1cd015a794a93c24cd275b83d49f37c0e3dc47ae777"
+    },
+    "oblique/rebuilt-surface/0318a0fa718408d19937.b3dm": {
+      "bytes": 91088,
+      "sha256": "0318a0fa718408d19937740c6eae28cdc3cb20881e3e2d23bbe7c7cc3b3f4499"
+    },
+    "oblique/rebuilt-surface/0364c2ca2f295e608d77.b3dm": {
+      "bytes": 45268,
+      "sha256": "0364c2ca2f295e608d77ec07e9dc0a78a715dcfe3baa76c0eaa75c5bdcc52323"
+    },
+    "oblique/rebuilt-surface/0388a8c491dbd640f6f9.b3dm": {
+      "bytes": 93680,
+      "sha256": "0388a8c491dbd640f6f9e58363ed674cdc93c82e9b92043dd8d3d101f1601377"
+    },
+    "oblique/rebuilt-surface/049b479c70622b439f70.b3dm": {
+      "bytes": 175940,
+      "sha256": "049b479c70622b439f706580050284204c51ffc21691cb8eddc834af31a9a780"
+    },
+    "oblique/rebuilt-surface/05cd22d0810d0c6d41b4.b3dm": {
+      "bytes": 64548,
+      "sha256": "05cd22d0810d0c6d41b499d43a7fdfa71b685f7152b406a9a8742ff2aac1db37"
+    },
+    "oblique/rebuilt-surface/065723544781b98a3484.b3dm": {
+      "bytes": 57440,
+      "sha256": "065723544781b98a3484a029cb342a6eba40bf5bd316a21d13d81f1001c288e7"
+    },
+    "oblique/rebuilt-surface/081d506ea724f0d3e080.b3dm": {
+      "bytes": 45552,
+      "sha256": "081d506ea724f0d3e080f7828d92aed7e3296b930389d52e7b72fc53dc36d81b"
+    },
+    "oblique/rebuilt-surface/0883c384c9a49bc59f73.b3dm": {
+      "bytes": 44392,
+      "sha256": "0883c384c9a49bc59f73fd9a2c45cab5d1895188cb3b7e35ae8c5b25efa8996d"
+    },
+    "oblique/rebuilt-surface/08f8a766637440cbf6ba.b3dm": {
+      "bytes": 49656,
+      "sha256": "08f8a766637440cbf6ba5c826020c231202a146dc8c96f765b25be243c54bdac"
+    },
+    "oblique/rebuilt-surface/0e4ebd3ac372441141ea.b3dm": {
+      "bytes": 55984,
+      "sha256": "0e4ebd3ac372441141eaacf213dc75a56e425affd33fdd8cb8aa3f42e7973470"
+    },
+    "oblique/rebuilt-surface/0ea4fc35074ec9dc61a0.b3dm": {
+      "bytes": 70144,
+      "sha256": "0ea4fc35074ec9dc61a0ee1934ba23a03605de4d825afd6428a44241ea0bfd92"
+    },
+    "oblique/rebuilt-surface/0f38ead4a40cca170fca.b3dm": {
+      "bytes": 69824,
+      "sha256": "0f38ead4a40cca170fcaae625f92b8bfc80e2930e20e9644818cf7c32781dcb6"
+    },
+    "oblique/rebuilt-surface/0f95158493ec081076fd.b3dm": {
+      "bytes": 177892,
+      "sha256": "0f95158493ec081076fdfc9d54f09d715d54012e64a3245f885f789654468a60"
+    },
+    "oblique/rebuilt-surface/0fb1caeb1c2ebe1cbe6a.b3dm": {
+      "bytes": 200968,
+      "sha256": "0fb1caeb1c2ebe1cbe6a875aec8bf78019d4358bd4b58419fccea7773a5cb9ae"
+    },
+    "oblique/rebuilt-surface/103efc4ef0a8cc70e9e9.b3dm": {
+      "bytes": 69540,
+      "sha256": "103efc4ef0a8cc70e9e964de0876b8c5e3fb21e0b1eaa6b29b5fb72b73303d23"
+    },
+    "oblique/rebuilt-surface/139552eaabea8d1c72ef.b3dm": {
+      "bytes": 74360,
+      "sha256": "139552eaabea8d1c72ef921c426ec372fba2f285816ed1091edabaeb96539663"
+    },
+    "oblique/rebuilt-surface/13d1317fabf5d7f08adf.b3dm": {
+      "bytes": 61512,
+      "sha256": "13d1317fabf5d7f08adf4dedcd862cefda0c6881c26df285040f4f304f51b3b7"
+    },
+    "oblique/rebuilt-surface/154a3b4c399ec2bc6118.b3dm": {
+      "bytes": 65856,
+      "sha256": "154a3b4c399ec2bc6118d2bc3d1677cc0b51f8f678d119e7c79e4f9b60028fd4"
+    },
+    "oblique/rebuilt-surface/19738f89bf75d85248d7.b3dm": {
+      "bytes": 89764,
+      "sha256": "19738f89bf75d85248d7441222e7024dfbcb20777d94184f2b439ceaa9c5546d"
+    },
+    "oblique/rebuilt-surface/1a406528cd36e863fdad.b3dm": {
+      "bytes": 66548,
+      "sha256": "1a406528cd36e863fdad6ea6203a0e13e1b42f797034a4b868544b7123f1fc70"
+    },
+    "oblique/rebuilt-surface/1aa0aee5bc631a2fe882.b3dm": {
+      "bytes": 73312,
+      "sha256": "1aa0aee5bc631a2fe8824da27980b6eb7a8bc3e00d9f41ad2a4a6c02c1d8bdef"
+    },
+    "oblique/rebuilt-surface/1b21170b508eecb86240.b3dm": {
+      "bytes": 98320,
+      "sha256": "1b21170b508eecb86240ca86c517b323c3693ffd2e26ea7524a6dea6e3321608"
+    },
+    "oblique/rebuilt-surface/1b38fec847f69abff9e6.b3dm": {
+      "bytes": 49524,
+      "sha256": "1b38fec847f69abff9e6ba7ae4170a1f61a9dd82bd771cb721bb534e7208bff1"
+    },
+    "oblique/rebuilt-surface/1cf3195a88fc01b3ba76.b3dm": {
+      "bytes": 194620,
+      "sha256": "1cf3195a88fc01b3ba76c7707056e007e98d24563823da241869a4b561017148"
+    },
+    "oblique/rebuilt-surface/207c2993638ee4c61bad.b3dm": {
+      "bytes": 174528,
+      "sha256": "207c2993638ee4c61bad7be1afa469aaee1550021a1e20eb703f1ca1219de85a"
+    },
+    "oblique/rebuilt-surface/2212d956964505ff9aa3.b3dm": {
+      "bytes": 217512,
+      "sha256": "2212d956964505ff9aa35169ca5128afdcfcd070b797bccf701636b811b9fa27"
+    },
+    "oblique/rebuilt-surface/26b96e68705d8f716adf.b3dm": {
+      "bytes": 309532,
+      "sha256": "26b96e68705d8f716adfc7bd7556e3d92f83f5debc52eabfe431fef77d0be963"
+    },
+    "oblique/rebuilt-surface/2704fb7966a7001b7354.b3dm": {
+      "bytes": 106628,
+      "sha256": "2704fb7966a7001b7354a9fbc610a2035eb3fb1d94487a3951f7ec1b132ec8c9"
+    },
+    "oblique/rebuilt-surface/272503b0864ad230e614.b3dm": {
+      "bytes": 238952,
+      "sha256": "272503b0864ad230e6149a90cbd4c9e8551b0848beed11e579e57e1c3d28a309"
+    },
+    "oblique/rebuilt-surface/2741df0b0524591fdfed.b3dm": {
+      "bytes": 46292,
+      "sha256": "2741df0b0524591fdfed0cb4ad236edcbb8dd546ac69e7bc86cf86efe90deda3"
+    },
+    "oblique/rebuilt-surface/27ad65fc1571945495c1.b3dm": {
+      "bytes": 61024,
+      "sha256": "27ad65fc1571945495c1cd52af4955e4ce2d4b644e58a3c52d54780f51dd63d8"
+    },
+    "oblique/rebuilt-surface/2a8ed7ee21a15c20c950.b3dm": {
+      "bytes": 147948,
+      "sha256": "2a8ed7ee21a15c20c950fd90a149ef77362c790bd8b67d3a2689ccf687ab3b64"
+    },
+    "oblique/rebuilt-surface/2a9ceab48215baf7a2d0.b3dm": {
+      "bytes": 132632,
+      "sha256": "2a9ceab48215baf7a2d0b5ed5fb9cbee6aa08dc8bbe4eea6d0e6a344d7789e65"
+    },
+    "oblique/rebuilt-surface/2acae3425b487041969d.b3dm": {
+      "bytes": 67796,
+      "sha256": "2acae3425b487041969df3d68f52f10acb0ccc7af60fe5e685098dc14c0e973c"
+    },
+    "oblique/rebuilt-surface/2af878b7ce4ce0dd7602.b3dm": {
+      "bytes": 45520,
+      "sha256": "2af878b7ce4ce0dd7602de023df1d6a12a03e49932362570d926d7b2cb81cef3"
+    },
+    "oblique/rebuilt-surface/2ba481a58c5fafe3af50.b3dm": {
+      "bytes": 140184,
+      "sha256": "2ba481a58c5fafe3af507847b2692273b5322b3ccc83e2a722a2a313aacf96dc"
+    },
+    "oblique/rebuilt-surface/2ce5aa02c3247f00b7eb.b3dm": {
+      "bytes": 61520,
+      "sha256": "2ce5aa02c3247f00b7eb8fa5eac65f18207d37185b246f6e88f9d1e6e901ba8a"
+    },
+    "oblique/rebuilt-surface/2deaa5ee8a23805e5bdd.b3dm": {
+      "bytes": 181476,
+      "sha256": "2deaa5ee8a23805e5bdd8dd69cfb5ffd52198a584d950db71957f7c362d25cca"
+    },
+    "oblique/rebuilt-surface/3007412d7a80c1fe9764.b3dm": {
+      "bytes": 213996,
+      "sha256": "3007412d7a80c1fe976422a8605bf4aef75517c163d26f44231149e9ae015560"
+    },
+    "oblique/rebuilt-surface/3071f3db7bd79bc3c717.b3dm": {
+      "bytes": 110628,
+      "sha256": "3071f3db7bd79bc3c7171a14b0ddd2d6961134dbc1290416737fe105a35faa4d"
+    },
+    "oblique/rebuilt-surface/30d574771d1fe0abf748.b3dm": {
+      "bytes": 106624,
+      "sha256": "30d574771d1fe0abf748c68dff9108162f8747fee9553e25ac792d7d0fc56aa3"
+    },
+    "oblique/rebuilt-surface/33fffb77de9e7173be1b.b3dm": {
+      "bytes": 108252,
+      "sha256": "33fffb77de9e7173be1b15fcec92d7b59622d3a86d672db9d3fbc2d985fb4e65"
+    },
+    "oblique/rebuilt-surface/341508712ec09339cb86.b3dm": {
+      "bytes": 84400,
+      "sha256": "341508712ec09339cb867fc5a0445c2645183558084e9fa2667d14bf63303c97"
+    },
+    "oblique/rebuilt-surface/348e0348918ffeab4c3d.b3dm": {
+      "bytes": 263900,
+      "sha256": "348e0348918ffeab4c3d9dbad63f1cd365798416bfad23f777418b77eb6f4aa8"
+    },
+    "oblique/rebuilt-surface/35e6b283092061b75f38.b3dm": {
+      "bytes": 88024,
+      "sha256": "35e6b283092061b75f38283d125ec201f8ef4903b955fc3e0f4e4cea344512a1"
+    },
+    "oblique/rebuilt-surface/35fcaae3a24b79db5597.b3dm": {
+      "bytes": 72920,
+      "sha256": "35fcaae3a24b79db5597854e2ddcf5ccd235a7a6059d5561732ff362467a2c21"
+    },
+    "oblique/rebuilt-surface/36d392a0f3a42b1a7f7c.b3dm": {
+      "bytes": 75456,
+      "sha256": "36d392a0f3a42b1a7f7c25a9d478401eb83bc0e1b52d7c615395059a64547532"
+    },
+    "oblique/rebuilt-surface/3ac5af97e5fe9345b747.b3dm": {
+      "bytes": 161396,
+      "sha256": "3ac5af97e5fe9345b747dd3a5a04f3dca0472ea5129d572a547594599146e2c7"
+    },
+    "oblique/rebuilt-surface/3ac8cdda1c9469e2c93d.b3dm": {
+      "bytes": 194608,
+      "sha256": "3ac8cdda1c9469e2c93d710e1333f8e1aadef16d0e72edad6ab931f1896ed4f7"
+    },
+    "oblique/rebuilt-surface/3be1e4889818b2cf6096.b3dm": {
+      "bytes": 87348,
+      "sha256": "3be1e4889818b2cf609689d1371b9e6129ff6c7c8cb549cfc9c6c3a01de7df70"
+    },
+    "oblique/rebuilt-surface/3d9cc377f50feb624ebd.b3dm": {
+      "bytes": 98376,
+      "sha256": "3d9cc377f50feb624ebd873f64809057edc33efb0484794c3e83e7665799bffd"
+    },
+    "oblique/rebuilt-surface/3da3ad4cacded42308b3.b3dm": {
+      "bytes": 91360,
+      "sha256": "3da3ad4cacded42308b31dfe2f45e4186326e3679ef5922e9154141fa3c556de"
+    },
+    "oblique/rebuilt-surface/3e716e1a7ca422913518.b3dm": {
+      "bytes": 68252,
+      "sha256": "3e716e1a7ca422913518cf9dce575ce62aa43a98168bf56944f5f9ab4a2ef0ee"
+    },
+    "oblique/rebuilt-surface/3ee348bcf408166b47d0.b3dm": {
+      "bytes": 177704,
+      "sha256": "3ee348bcf408166b47d06d1a91fb1431d96b663074401667ad8e5b9fc960894b"
+    },
+    "oblique/rebuilt-surface/4035229d91b611d9b1dc.b3dm": {
+      "bytes": 86760,
+      "sha256": "4035229d91b611d9b1dcb97ea41f13d06706feb51c199306174d024fbaa01a22"
+    },
+    "oblique/rebuilt-surface/40a81f5778f574e2056f.b3dm": {
+      "bytes": 64368,
+      "sha256": "40a81f5778f574e2056f320ebeddcead0a7affcf8c0728235752aa3153104bdf"
+    },
+    "oblique/rebuilt-surface/41351679328b1b3a906f.b3dm": {
+      "bytes": 90364,
+      "sha256": "41351679328b1b3a906fdbd6e33b6732f5c70f96d20c341796eea4dc812c57e9"
+    },
+    "oblique/rebuilt-surface/4289fb8af11d0c2eac23.b3dm": {
+      "bytes": 137452,
+      "sha256": "4289fb8af11d0c2eac23fcc9efbe377da6b71665e8c080327f98833007b6aa5f"
+    },
+    "oblique/rebuilt-surface/463aa9b3bd28f09b6377.b3dm": {
+      "bytes": 37540,
+      "sha256": "463aa9b3bd28f09b6377e0e2342f0ebab5843ec8cc3df883865aa8c0c479c517"
+    },
+    "oblique/rebuilt-surface/464d1b08123842df1654.b3dm": {
+      "bytes": 61656,
+      "sha256": "464d1b08123842df1654bde51e2eecffc0685bda74698734e8948812bd969219"
+    },
+    "oblique/rebuilt-surface/4949042c4a8ad9863919.b3dm": {
+      "bytes": 58112,
+      "sha256": "4949042c4a8ad9863919c5e859b69b613891b8e9fe91cfcdcd1a42691a5c3181"
+    },
+    "oblique/rebuilt-surface/4a87dd1eab0f72579f4a.b3dm": {
+      "bytes": 163724,
+      "sha256": "4a87dd1eab0f72579f4a62d46c9f909962f0da1b4d6ff01525db1aeebc0206f7"
+    },
+    "oblique/rebuilt-surface/4b919f625e035772e704.b3dm": {
+      "bytes": 94528,
+      "sha256": "4b919f625e035772e704f44e45d628b2d1aa7b9830ee45de9426262860b7ad87"
+    },
+    "oblique/rebuilt-surface/4db8635ef968c8e0eeea.b3dm": {
+      "bytes": 51188,
+      "sha256": "4db8635ef968c8e0eeea19a678c777b0dc9d7e889a15b5106adfccc39ff55ca1"
+    },
+    "oblique/rebuilt-surface/51958f54402131d90f08.b3dm": {
+      "bytes": 74688,
+      "sha256": "51958f54402131d90f0837b4c90a3efbfa82512c05d71fac4dec1c594a0dd960"
+    },
+    "oblique/rebuilt-surface/53cb4d836f49c8f511a2.b3dm": {
+      "bytes": 414616,
+      "sha256": "53cb4d836f49c8f511a223d4de6722992d3a1101c18ff2cf7d529f0d0e466c8c"
+    },
+    "oblique/rebuilt-surface/54c06e99473313560f27.b3dm": {
+      "bytes": 126312,
+      "sha256": "54c06e99473313560f274f8aa53d7a9471ffad2207456d35b0b52e2b6ae8efc8"
+    },
+    "oblique/rebuilt-surface/54fda96b33c2ba21c7aa.b3dm": {
+      "bytes": 149788,
+      "sha256": "54fda96b33c2ba21c7aaa5444ffa736221ba83f505163f1ce03325ae769624f1"
+    },
+    "oblique/rebuilt-surface/5593b57a1853e720236c.b3dm": {
+      "bytes": 114344,
+      "sha256": "5593b57a1853e720236cf3682135eec0d40dd5a1181468830a31ada94bbbf2b2"
+    },
+    "oblique/rebuilt-surface/55e69ee13763fd0631cf.b3dm": {
+      "bytes": 53056,
+      "sha256": "55e69ee13763fd0631cf654148c66f30a816fd7a0f6677f42a234619fb8c8131"
+    },
+    "oblique/rebuilt-surface/56b8234963fb54658fc2.b3dm": {
+      "bytes": 52476,
+      "sha256": "56b8234963fb54658fc22be780b7a0a47e4b3720bd7ee02c351f8c64ed352e87"
+    },
+    "oblique/rebuilt-surface/57344726fcfea17cbfb9.b3dm": {
+      "bytes": 77012,
+      "sha256": "57344726fcfea17cbfb945ae4e3a6243650b2f9b894c7421ff9d5154c9fa60ea"
+    },
+    "oblique/rebuilt-surface/57d69855156c36f554e9.b3dm": {
+      "bytes": 57528,
+      "sha256": "57d69855156c36f554e91e1bf059e7748c1644d26384acf94ed1580d84ec331b"
+    },
+    "oblique/rebuilt-surface/5a1ef0a43653c4f6be9e.b3dm": {
+      "bytes": 289044,
+      "sha256": "5a1ef0a43653c4f6be9ee4f205e1ef8df3a26867f3e1399d404a4c0abc4903e1"
+    },
+    "oblique/rebuilt-surface/5aee55c1114f26757b25.b3dm": {
+      "bytes": 59324,
+      "sha256": "5aee55c1114f26757b25e0cc291111eb6ffda6c4538212b2d4dd5120c06e90b8"
+    },
+    "oblique/rebuilt-surface/5c51ab8a4f8ddc23ac17.b3dm": {
+      "bytes": 98484,
+      "sha256": "5c51ab8a4f8ddc23ac177986202ec50afcc893661d8b50a83992b197b3d7eada"
+    },
+    "oblique/rebuilt-surface/5e1a3bbeac5ea3ca3605.b3dm": {
+      "bytes": 111720,
+      "sha256": "5e1a3bbeac5ea3ca36052e3a82a7c4dbe1c45d2af713791cc6b87e5af9e717da"
+    },
+    "oblique/rebuilt-surface/5f0df4038fa9cda5de8f.b3dm": {
+      "bytes": 45252,
+      "sha256": "5f0df4038fa9cda5de8f39c06f6d47cface3a19084b4fac7dc46db1456ecac9f"
+    },
+    "oblique/rebuilt-surface/602eb2e1e38e63debeb7.b3dm": {
+      "bytes": 68304,
+      "sha256": "602eb2e1e38e63debeb7e4acf86926d54926a650f208ff12f245308c50accfae"
+    },
+    "oblique/rebuilt-surface/607b90de08d5794e669a.b3dm": {
+      "bytes": 46008,
+      "sha256": "607b90de08d5794e669aa3691f34d603eb1813861b88590fcc8047106d46c36d"
+    },
+    "oblique/rebuilt-surface/61c5d2dabd9e7d19c90e.b3dm": {
+      "bytes": 159676,
+      "sha256": "61c5d2dabd9e7d19c90ee0deef49c97191f964ab967682e106553ec735578421"
+    },
+    "oblique/rebuilt-surface/61d2eecc042c558c98f2.b3dm": {
+      "bytes": 50972,
+      "sha256": "61d2eecc042c558c98f279974ab105356610e52c1dbd8d320f94e989335cddfa"
+    },
+    "oblique/rebuilt-surface/61f3414044700a36d721.b3dm": {
+      "bytes": 85892,
+      "sha256": "61f3414044700a36d7211b6c153677ac36ddc3d162f77770663c8d17aefa7a24"
+    },
+    "oblique/rebuilt-surface/626275ed0b8c0bcb8f1a.b3dm": {
+      "bytes": 193364,
+      "sha256": "626275ed0b8c0bcb8f1a7de1206b745f204f68bfc3936ec53b5d9bfd0d14996f"
+    },
+    "oblique/rebuilt-surface/63ab06571fdd77d4accc.b3dm": {
+      "bytes": 45208,
+      "sha256": "63ab06571fdd77d4accc5810fe7fb6dd15cf0d821bfb72a7ee97f110227aefbf"
+    },
+    "oblique/rebuilt-surface/63f9d090c658bb52ed7b.b3dm": {
+      "bytes": 177172,
+      "sha256": "63f9d090c658bb52ed7b7c68bb64de8c9601e5f9e3853ed879cb1b14e03bcc48"
+    },
+    "oblique/rebuilt-surface/662fbe585bc44dc3d0b4.b3dm": {
+      "bytes": 74280,
+      "sha256": "662fbe585bc44dc3d0b4f943b785d39e78986be0e03271a79b0e15b17f1bbbb9"
+    },
+    "oblique/rebuilt-surface/66f65287e1e858884df2.b3dm": {
+      "bytes": 81252,
+      "sha256": "66f65287e1e858884df2b0fe3bb89a6f397b717521eb82bbf027d447dac27732"
+    },
+    "oblique/rebuilt-surface/67dedf5f69fdbd95a868.b3dm": {
+      "bytes": 39112,
+      "sha256": "67dedf5f69fdbd95a868c26099e0bb8cbbaebd0c384054b5411c8e95f056ed89"
+    },
+    "oblique/rebuilt-surface/696ea4e062b98233a013.b3dm": {
+      "bytes": 84556,
+      "sha256": "696ea4e062b98233a013fd3a42d166032025e3429e5b555f6100afbc55724a32"
+    },
+    "oblique/rebuilt-surface/69e3b40e8df3dad205e6.b3dm": {
+      "bytes": 250868,
+      "sha256": "69e3b40e8df3dad205e6c410453e64b61387298b64b20e6fe5ace97e0bd3a8f2"
+    },
+    "oblique/rebuilt-surface/6b57d949f80516e2c613.b3dm": {
+      "bytes": 417128,
+      "sha256": "6b57d949f80516e2c613cbb0f18ffeca194fc35cef38fc2b8b33d6e72856a9ea"
+    },
+    "oblique/rebuilt-surface/6e46b712183a9ba85d7c.b3dm": {
+      "bytes": 79032,
+      "sha256": "6e46b712183a9ba85d7cd4d8601d937abe8132d3a77333449c65d46bd46a656e"
+    },
+    "oblique/rebuilt-surface/6e87bcce07a7ed2f97c6.b3dm": {
+      "bytes": 70736,
+      "sha256": "6e87bcce07a7ed2f97c6eaaf2e4725fd12a0570d1f97b18a6083c3f65538fece"
+    },
+    "oblique/rebuilt-surface/6ed0e320a3cf8b397f79.b3dm": {
+      "bytes": 221052,
+      "sha256": "6ed0e320a3cf8b397f79893e7129ddd03f9f2c22322d78006ee8454d61967034"
+    },
+    "oblique/rebuilt-surface/7055870ee61f2df06f26.b3dm": {
+      "bytes": 175756,
+      "sha256": "7055870ee61f2df06f2640d833d52896550a551280f5e147cb27cdd7f511047a"
+    },
+    "oblique/rebuilt-surface/70b898374020c78cb1fc.b3dm": {
+      "bytes": 110880,
+      "sha256": "70b898374020c78cb1fcee18c564dab0088e69e41dfd3ebd75241bd986353bdd"
+    },
+    "oblique/rebuilt-surface/72e71606dbbd0822defb.b3dm": {
+      "bytes": 101304,
+      "sha256": "72e71606dbbd0822defba3b2c2cba43d366209202c397dd1475912db8a4b1472"
+    },
+    "oblique/rebuilt-surface/747189c831c49fb39f56.b3dm": {
+      "bytes": 61112,
+      "sha256": "747189c831c49fb39f562675b10422ffb400d506b2d817421cad9e18431126ca"
+    },
+    "oblique/rebuilt-surface/75cb2bbb27d683c1d52a.b3dm": {
+      "bytes": 266256,
+      "sha256": "75cb2bbb27d683c1d52ad57dd6b380fca7bb7f6a67b912aaddc4370435cf6b92"
+    },
+    "oblique/rebuilt-surface/76b7cf796fd84ac8cc9d.b3dm": {
+      "bytes": 57768,
+      "sha256": "76b7cf796fd84ac8cc9df8c4f757ed16d3c4ee02a379e527933ef55f5a34dd4e"
+    },
+    "oblique/rebuilt-surface/78a487340cfc88053939.b3dm": {
+      "bytes": 356404,
+      "sha256": "78a487340cfc880539391b989de65d92a8267df26a45ebb511b9118e3a32ff9c"
+    },
+    "oblique/rebuilt-surface/79f49da857e7c862ddad.b3dm": {
+      "bytes": 73380,
+      "sha256": "79f49da857e7c862ddad30130d422428ceadc29209558de4ebd93a5414632b66"
+    },
+    "oblique/rebuilt-surface/7b2239c0b5c0dc3093ed.b3dm": {
+      "bytes": 75084,
+      "sha256": "7b2239c0b5c0dc3093ed8ad6b862bec078ad8d0a9062192e6c2fd3b21e0fca89"
+    },
+    "oblique/rebuilt-surface/7c39a785c9f1d1139af4.b3dm": {
+      "bytes": 210796,
+      "sha256": "7c39a785c9f1d1139af44877160993c40481d5fa73173dac9f0b8007b281bd4d"
+    },
+    "oblique/rebuilt-surface/7d740392a7912a289592.b3dm": {
+      "bytes": 105400,
+      "sha256": "7d740392a7912a289592a976adcd3f1373b35bdbfe2394bfc0a6cae49a3e418e"
+    },
+    "oblique/rebuilt-surface/7e1bdfc9200018050393.b3dm": {
+      "bytes": 54556,
+      "sha256": "7e1bdfc9200018050393a57c9ad2a9f47252f1d10868c521fe718242438644fa"
+    },
+    "oblique/rebuilt-surface/7f3c19af34def0004e68.b3dm": {
+      "bytes": 303248,
+      "sha256": "7f3c19af34def0004e681458d53926f40407e2237f2eecf4b141c1ec3bd8e36c"
+    },
+    "oblique/rebuilt-surface/7f87194f8c5e94d142b4.b3dm": {
+      "bytes": 115832,
+      "sha256": "7f87194f8c5e94d142b4510fc923614024b0aa78adec8a12063a6cfa447c02d4"
+    },
+    "oblique/rebuilt-surface/7fa33c6ca3f0905dce90.b3dm": {
+      "bytes": 86712,
+      "sha256": "7fa33c6ca3f0905dce9032283e3320df0826860489b455af67981a36096302a2"
+    },
+    "oblique/rebuilt-surface/7ff2a29a0a69ce4284df.b3dm": {
+      "bytes": 69792,
+      "sha256": "7ff2a29a0a69ce4284df7f7a48c676f6b90e63b2699384b57742b9a501aff286"
+    },
+    "oblique/rebuilt-surface/818287eb6f3bef481d97.b3dm": {
+      "bytes": 100468,
+      "sha256": "818287eb6f3bef481d974e0e8e960e328b9d4b642133f51023fa4284e9dd1ca7"
+    },
+    "oblique/rebuilt-surface/81f1c0e712efafeeb18e.b3dm": {
+      "bytes": 46620,
+      "sha256": "81f1c0e712efafeeb18e650bb535bec33317b880e3fcb5c29c2a9dc39f2f4b6b"
+    },
+    "oblique/rebuilt-surface/823176180cd7d0557be3.b3dm": {
+      "bytes": 60848,
+      "sha256": "823176180cd7d0557be3b0c5da0d30c6c7765ea01e0deebab84255a267a28136"
+    },
+    "oblique/rebuilt-surface/82dcfd33f495f1080713.b3dm": {
+      "bytes": 57728,
+      "sha256": "82dcfd33f495f1080713f2fd7f3ba94c3cba300778ce59fe71845299650d3260"
+    },
+    "oblique/rebuilt-surface/83323fbb412119eda716.b3dm": {
+      "bytes": 188464,
+      "sha256": "83323fbb412119eda716ff74302336d929d654ef950ae7d8f19e41150d9c0887"
+    },
+    "oblique/rebuilt-surface/8352f783d5007959499c.b3dm": {
+      "bytes": 85492,
+      "sha256": "8352f783d5007959499c034ac1c8ff43b3886b85c2f2e6b1115c23f85e805b26"
+    },
+    "oblique/rebuilt-surface/839fb065378d939e0e92.b3dm": {
+      "bytes": 43744,
+      "sha256": "839fb065378d939e0e929ff9fee79846d9b40738f88c8ffbf66a508ba7517345"
+    },
+    "oblique/rebuilt-surface/8508f30429b959925089.b3dm": {
+      "bytes": 76828,
+      "sha256": "8508f30429b95992508978e67cf65196b9c7c0ff7fa9b1c5fd91d805db4b752d"
+    },
+    "oblique/rebuilt-surface/850d945122f1c3f4ac39.b3dm": {
+      "bytes": 68344,
+      "sha256": "850d945122f1c3f4ac392f208a7cdbf2b11dbdd717843f67d643c864b2939212"
+    },
+    "oblique/rebuilt-surface/85eca147d7f6b6a1c81e.b3dm": {
+      "bytes": 65500,
+      "sha256": "85eca147d7f6b6a1c81e343fcfa98fbc82318907360e482800929a550863970d"
+    },
+    "oblique/rebuilt-surface/866840b834de38faacf0.b3dm": {
+      "bytes": 185228,
+      "sha256": "866840b834de38faacf0a1e1d8dd3b9919a06029a8c50aebb4ad174f4984d0a3"
+    },
+    "oblique/rebuilt-surface/8691410f454cd05a675f.b3dm": {
+      "bytes": 52372,
+      "sha256": "8691410f454cd05a675f1c4e9b1681d419c51fb43f4c9647717d375d7cd9175a"
+    },
+    "oblique/rebuilt-surface/88018b304d9b2c3b1a2d.b3dm": {
+      "bytes": 48608,
+      "sha256": "88018b304d9b2c3b1a2db3e848de2b9cd533b8565a7691118c0f7fc118f59b92"
+    },
+    "oblique/rebuilt-surface/8bbdf45ad720897b81f6.b3dm": {
+      "bytes": 58740,
+      "sha256": "8bbdf45ad720897b81f6bc64ef14d6f687fd0b391e5d18d391746cc84a0d0c53"
+    },
+    "oblique/rebuilt-surface/8c0a8cfc708d9fc02d43.b3dm": {
+      "bytes": 292264,
+      "sha256": "8c0a8cfc708d9fc02d43d0f601e91a69e32875538b287d361d4062c21875de89"
+    },
+    "oblique/rebuilt-surface/8c583e1aeedc9464957e.b3dm": {
+      "bytes": 128288,
+      "sha256": "8c583e1aeedc9464957ec69ea4efb1019feb64fae062e6a2eed5bede2cc349f8"
+    },
+    "oblique/rebuilt-surface/8eb66789eec42473ee2b.b3dm": {
+      "bytes": 78792,
+      "sha256": "8eb66789eec42473ee2b8bf70d9c2e415c37bb10953bd9676a1d1efbda828ff2"
+    },
+    "oblique/rebuilt-surface/8f179367a2cdd6ebc687.b3dm": {
+      "bytes": 69312,
+      "sha256": "8f179367a2cdd6ebc6877a31972aa3402582efad4125e01bb7c4efcdfc727039"
+    },
+    "oblique/rebuilt-surface/8f277c12d1c75026ca76.b3dm": {
+      "bytes": 199832,
+      "sha256": "8f277c12d1c75026ca76ae0eb90fc99a2a0832e5612e17e48cbdf2cbcb59db2f"
+    },
+    "oblique/rebuilt-surface/8f9a2f087b2e50f1bf00.b3dm": {
+      "bytes": 88000,
+      "sha256": "8f9a2f087b2e50f1bf006d85bd16a6e65f978e3f6b420399be2d7f4799fd5f88"
+    },
+    "oblique/rebuilt-surface/9014b377052f841e3839.b3dm": {
+      "bytes": 278508,
+      "sha256": "9014b377052f841e38394a024b0b236b09259959d01722426091d293377b17cd"
+    },
+    "oblique/rebuilt-surface/914d4b3d74dd2aca3242.b3dm": {
+      "bytes": 45840,
+      "sha256": "914d4b3d74dd2aca32421404ed4d435e40e328821c26b96542efc15a9a24968b"
+    },
+    "oblique/rebuilt-surface/93044b10fe5c0e6bed94.b3dm": {
+      "bytes": 63240,
+      "sha256": "93044b10fe5c0e6bed943f3a64ec6d574d0f0b1df3669f7b4abf2d2083907c23"
+    },
+    "oblique/rebuilt-surface/93a925692027c0fdccd1.b3dm": {
+      "bytes": 125188,
+      "sha256": "93a925692027c0fdccd10510cd97acbc64c356ac7ebe0068c1a424c269954f7b"
+    },
+    "oblique/rebuilt-surface/9406a41ba3fcc9141ddf.b3dm": {
+      "bytes": 66652,
+      "sha256": "9406a41ba3fcc9141ddfec4c5c5cc567b2febb7a5b8e0c4cfb0bbb1e667325f6"
+    },
+    "oblique/rebuilt-surface/95368f587dbc677475cf.b3dm": {
+      "bytes": 194776,
+      "sha256": "95368f587dbc677475cffe6c9f338ed4aca825b6344082a76b5b375198372206"
+    },
+    "oblique/rebuilt-surface/96b7eaaa743a7a1f5706.b3dm": {
+      "bytes": 99316,
+      "sha256": "96b7eaaa743a7a1f57068391dab6722e159ed8e5b37b4cdc63dba4a300bde41c"
+    },
+    "oblique/rebuilt-surface/9701398060f892a18f98.b3dm": {
+      "bytes": 41536,
+      "sha256": "9701398060f892a18f98801429cbaf05d04c2221ded46b63a0f243a1f3d01a33"
+    },
+    "oblique/rebuilt-surface/9702a4ea56b1319cca6a.b3dm": {
+      "bytes": 77496,
+      "sha256": "9702a4ea56b1319cca6a94780be950bb3c12dd95a9995ed4cb534ed9aed62d57"
+    },
+    "oblique/rebuilt-surface/9767254dc91d0734758f.b3dm": {
+      "bytes": 333256,
+      "sha256": "9767254dc91d0734758f4b61a1f09140934caa66279666243d28d92ad55b695d"
+    },
+    "oblique/rebuilt-surface/97d17497cafb1e439c78.b3dm": {
+      "bytes": 87304,
+      "sha256": "97d17497cafb1e439c78d9cc7c5777168b1091bc88a2eca983ef425b4d294528"
+    },
+    "oblique/rebuilt-surface/97dba0fe4b5efcd5ff0d.b3dm": {
+      "bytes": 160428,
+      "sha256": "97dba0fe4b5efcd5ff0d43a42d51a5d5be91965fd9a6385c00a174fa409984f0"
+    },
+    "oblique/rebuilt-surface/98590a8367e40695fcf1.b3dm": {
+      "bytes": 111700,
+      "sha256": "98590a8367e40695fcf1c20f71aabf864fbbfbff241f04d7c546df8faf20cdb2"
+    },
+    "oblique/rebuilt-surface/98a971b348c7184e7837.b3dm": {
+      "bytes": 52360,
+      "sha256": "98a971b348c7184e7837366d894a9831c876331c3b0a895b6f5d0b5c9d76d48d"
+    },
+    "oblique/rebuilt-surface/9969154e5e59428c44a2.b3dm": {
+      "bytes": 90384,
+      "sha256": "9969154e5e59428c44a23baf4cbe8623472ce4b2110b7274f052297526522f65"
+    },
+    "oblique/rebuilt-surface/9b0f0cad672e3efd331f.b3dm": {
+      "bytes": 144844,
+      "sha256": "9b0f0cad672e3efd331f81bd6c3921cc44671b5fda77bfc766beacf3c814a4ae"
+    },
+    "oblique/rebuilt-surface/9e3704a3614328a636ee.b3dm": {
+      "bytes": 131412,
+      "sha256": "9e3704a3614328a636ee3abc8e61bd714a8acd14db6f28ccb113636f601c52dc"
+    },
+    "oblique/rebuilt-surface/9fbfb6ca16bf894c0cec.b3dm": {
+      "bytes": 350772,
+      "sha256": "9fbfb6ca16bf894c0cec9dd87978323cfce757b343787308b6b02ed8dced7440"
+    },
+    "oblique/rebuilt-surface/9fee29cec7fbf1d71b83.b3dm": {
+      "bytes": 68056,
+      "sha256": "9fee29cec7fbf1d71b83a33a1e39e4e5ebf3431edfea159f5c5db9f380bd96d2"
+    },
+    "oblique/rebuilt-surface/9ff7141faf5f4b50ae34.b3dm": {
+      "bytes": 75492,
+      "sha256": "9ff7141faf5f4b50ae34b8aa2ee37ac9dad728fe2319061c33314b23fb685047"
+    },
+    "oblique/rebuilt-surface/a0351a281312b88c4cda.b3dm": {
+      "bytes": 100848,
+      "sha256": "a0351a281312b88c4cda6691b8a92aca6a544042223e56a69b8746849b39c9c9"
+    },
+    "oblique/rebuilt-surface/a14bc5794e5cc3ed75b4.b3dm": {
+      "bytes": 189520,
+      "sha256": "a14bc5794e5cc3ed75b4beeefa4aa170f45c4b6fda6bd6ca7245840b3ba31cac"
+    },
+    "oblique/rebuilt-surface/a15e7dab19552e7de8a2.b3dm": {
+      "bytes": 55220,
+      "sha256": "a15e7dab19552e7de8a2c9d895e89c0acb5b8f774b29f3742f8072e2e4d2ecc8"
+    },
+    "oblique/rebuilt-surface/a18b2e8cba112a67f380.b3dm": {
+      "bytes": 357976,
+      "sha256": "a18b2e8cba112a67f38004e2b404c22fd8f1f516d13f21009fc38dec6ea93b72"
+    },
+    "oblique/rebuilt-surface/a21cd54f90ec9f2e75f0.b3dm": {
+      "bytes": 106424,
+      "sha256": "a21cd54f90ec9f2e75f0b8432c827b7e267531ebe80d0dd3bee4830436dd102d"
+    },
+    "oblique/rebuilt-surface/a41e2a222b78f2d2c652.b3dm": {
+      "bytes": 221408,
+      "sha256": "a41e2a222b78f2d2c652c866f83148084378027cfa528d05de577b255e306e73"
+    },
+    "oblique/rebuilt-surface/a4d0cca8caa4fddc16e0.b3dm": {
+      "bytes": 102048,
+      "sha256": "a4d0cca8caa4fddc16e04ce2ab3f2767ebc9a9d277c16b99c7f6cbf2055f5ca8"
+    },
+    "oblique/rebuilt-surface/a53a37031bbc59ec1f6d.b3dm": {
+      "bytes": 96700,
+      "sha256": "a53a37031bbc59ec1f6df6a8bfc43f33a77999c2a0063f3d355a2fb8e66db025"
+    },
+    "oblique/rebuilt-surface/a62f587faa5bfa2728aa.b3dm": {
+      "bytes": 96592,
+      "sha256": "a62f587faa5bfa2728aac089e74bff5accf384eb5c01596e9f7d313c1fa37a05"
+    },
+    "oblique/rebuilt-surface/a659ab60e84ffe5a7240.b3dm": {
+      "bytes": 68632,
+      "sha256": "a659ab60e84ffe5a7240be87d7f48cfd87fc49133ff86c2ee585a0cb799ad7f6"
+    },
+    "oblique/rebuilt-surface/a6a4df5720b00d68b8e0.b3dm": {
+      "bytes": 66720,
+      "sha256": "a6a4df5720b00d68b8e003c55564de28eeeaaadb28df5613070961fa7f0607ef"
+    },
+    "oblique/rebuilt-surface/a76bb9c8c733f6d3d800.b3dm": {
+      "bytes": 70608,
+      "sha256": "a76bb9c8c733f6d3d800b04217c934f3c1a8f40e9d3626b5a390c477de0557de"
+    },
+    "oblique/rebuilt-surface/a8f412a03a611692a6ec.b3dm": {
+      "bytes": 67228,
+      "sha256": "a8f412a03a611692a6ec0ce5e9d08c0655047051e554bfdff606c45ac68453a0"
+    },
+    "oblique/rebuilt-surface/a95c97081fcbeb2ab5af.b3dm": {
+      "bytes": 139924,
+      "sha256": "a95c97081fcbeb2ab5afef47da705f1eeb18180e0fac96b2fde376f68a9efdea"
+    },
+    "oblique/rebuilt-surface/aa0882903d6f1e17f384.b3dm": {
+      "bytes": 77316,
+      "sha256": "aa0882903d6f1e17f384d35d7158ba3e9be54887f9977fe3ab32202a78fde133"
+    },
+    "oblique/rebuilt-surface/aadfdf78fd5bdf361ccd.b3dm": {
+      "bytes": 185348,
+      "sha256": "aadfdf78fd5bdf361ccd12dd82ae696033bbcec6f47fde57c433d3872f75a82f"
+    },
+    "oblique/rebuilt-surface/abf7aab5c2297e02a12e.b3dm": {
+      "bytes": 144864,
+      "sha256": "abf7aab5c2297e02a12e64f62fbc540309139d24258475cdd093eb1d4b838274"
+    },
+    "oblique/rebuilt-surface/ac0ca5d49794df82bd49.b3dm": {
+      "bytes": 66856,
+      "sha256": "ac0ca5d49794df82bd4909ab14fb6d307a6819108c649edb16b097f901aefb1c"
+    },
+    "oblique/rebuilt-surface/ac34e5fb9fa62b38c584.b3dm": {
+      "bytes": 104576,
+      "sha256": "ac34e5fb9fa62b38c5841ba40885a06190a25274a19670db56f3678568280b9e"
+    },
+    "oblique/rebuilt-surface/ad0faef582909c372210.b3dm": {
+      "bytes": 45228,
+      "sha256": "ad0faef582909c37221060b6e3da4efe955622cad89149865a6d7b123374d597"
+    },
+    "oblique/rebuilt-surface/ada81aa0b2f78037f242.b3dm": {
+      "bytes": 72308,
+      "sha256": "ada81aa0b2f78037f2421ea24f84101ea98ff49b07d644d27cb6a65bf2696401"
+    },
+    "oblique/rebuilt-surface/b0a9866186b6e56b5802.b3dm": {
+      "bytes": 408004,
+      "sha256": "b0a9866186b6e56b5802ff2841678a4be24d80e70fbf1143694885fee7d9d971"
+    },
+    "oblique/rebuilt-surface/b124fce1ccd66c29f63e.b3dm": {
+      "bytes": 134024,
+      "sha256": "b124fce1ccd66c29f63e33404c66333242d7dbce8cad844287953f0a333c79d5"
+    },
+    "oblique/rebuilt-surface/b35a39fc81a36cfd1001.b3dm": {
+      "bytes": 136356,
+      "sha256": "b35a39fc81a36cfd1001ae70ae8e348435b08978b362a879f6cf5db9c41bfa79"
+    },
+    "oblique/rebuilt-surface/b4bb7bb6a62d1366d1b2.b3dm": {
+      "bytes": 277336,
+      "sha256": "b4bb7bb6a62d1366d1b2808c00091e2d3bcf33ed005849eb4bdabdd1e2a9f8d3"
+    },
+    "oblique/rebuilt-surface/b4d9de2bf24ad321ada0.b3dm": {
+      "bytes": 67832,
+      "sha256": "b4d9de2bf24ad321ada001311f5f1e711845959dd2e99a746a49c6fb47f4eccb"
+    },
+    "oblique/rebuilt-surface/b65ec9d9a17e0b26749a.b3dm": {
+      "bytes": 93676,
+      "sha256": "b65ec9d9a17e0b26749a6f9099fcbce3ac2d5fc7f8a596e6c34c56d4da7a1b27"
+    },
+    "oblique/rebuilt-surface/b739ee6ea0d7c6808b29.b3dm": {
+      "bytes": 302148,
+      "sha256": "b739ee6ea0d7c6808b29396cb2f68b763028bd59edcb2188ff39453995a1b609"
+    },
+    "oblique/rebuilt-surface/b9796153c861bd57cee8.b3dm": {
+      "bytes": 41564,
+      "sha256": "b9796153c861bd57cee8e1b564890c8272b5e45ab8fc555d0e3207b78bb7a4bf"
+    },
+    "oblique/rebuilt-surface/b9b53b886e64e6f20f04.b3dm": {
+      "bytes": 214780,
+      "sha256": "b9b53b886e64e6f20f04a382860b4c8c68e7dd9e16e5f02973c3750030e643a9"
+    },
+    "oblique/rebuilt-surface/b9fccf49113c43912b84.b3dm": {
+      "bytes": 90312,
+      "sha256": "b9fccf49113c43912b847bdf073fb0d9aeec6186dc130d2d6eefb929796cf70c"
+    },
+    "oblique/rebuilt-surface/bab2cf6e46bdd3a2bdf4.b3dm": {
+      "bytes": 138432,
+      "sha256": "bab2cf6e46bdd3a2bdf40a94c382e7397071c5dbcf4a04c9923af66831bdca54"
+    },
+    "oblique/rebuilt-surface/bb916bf0779c5aff3c39.b3dm": {
+      "bytes": 54428,
+      "sha256": "bb916bf0779c5aff3c39615a87d8b23466882684ebf5564157a15e4b49e72bd4"
+    },
+    "oblique/rebuilt-surface/bbe60af241832df9b8d2.b3dm": {
+      "bytes": 80816,
+      "sha256": "bbe60af241832df9b8d2097b04c506c343f8983ddbfb6ec927d42ede516c1924"
+    },
+    "oblique/rebuilt-surface/bc723ee77147dc29f1ec.b3dm": {
+      "bytes": 79092,
+      "sha256": "bc723ee77147dc29f1ec73cd3d5937703a146f65b17f8653abcebf3a0f7adb9a"
+    },
+    "oblique/rebuilt-surface/bd3607e24428740e6545.b3dm": {
+      "bytes": 65088,
+      "sha256": "bd3607e24428740e6545cbe3cb16a6849c414e8499b2181278103b548a4138ac"
+    },
+    "oblique/rebuilt-surface/bd5c79ecda66baf22664.b3dm": {
+      "bytes": 90272,
+      "sha256": "bd5c79ecda66baf226641aa08f4f92ec4f99bb250dbda5d2f0b35e8ed015f8ce"
+    },
+    "oblique/rebuilt-surface/be522a927e4254ae7d4b.b3dm": {
+      "bytes": 76268,
+      "sha256": "be522a927e4254ae7d4bcfaea05526d947ff04d9353bdf9f01f0b87910c9e046"
+    },
+    "oblique/rebuilt-surface/c09aa23f51a726845375.b3dm": {
+      "bytes": 49412,
+      "sha256": "c09aa23f51a726845375227f6f0f0e78fb2fed9b1b228005c659bc62a9962bc3"
+    },
+    "oblique/rebuilt-surface/c1b596a904594e25a5a2.b3dm": {
+      "bytes": 263900,
+      "sha256": "c1b596a904594e25a5a2f63d1cad569f6ca83bf2b0a66e62a7e8065a5440c8f3"
+    },
+    "oblique/rebuilt-surface/c2adf19f853a66ecee64.b3dm": {
+      "bytes": 58540,
+      "sha256": "c2adf19f853a66ecee64cdca192cd314d6c9750518b29097f212cc92938c8f97"
+    },
+    "oblique/rebuilt-surface/c530c0fff6c1708ceecd.b3dm": {
+      "bytes": 140896,
+      "sha256": "c530c0fff6c1708ceecd80ab9b0f82c809385cfba45efa356451bff1a696e58b"
+    },
+    "oblique/rebuilt-surface/c5f1be6b54176f90e09e.b3dm": {
+      "bytes": 48508,
+      "sha256": "c5f1be6b54176f90e09ecdcbc0f298a0c0b1d1a050c5f4e66825c39fcd3bba5c"
+    },
+    "oblique/rebuilt-surface/c71c94a91acbea888391.b3dm": {
+      "bytes": 84864,
+      "sha256": "c71c94a91acbea8883917acef350144aad2980c5f8e00c0c513013bae337f0e6"
+    },
+    "oblique/rebuilt-surface/c756ea8862713bb1f164.b3dm": {
+      "bytes": 105284,
+      "sha256": "c756ea8862713bb1f164eec423ed1080264fba7bae17b82879ec3ccb6a8f84a7"
+    },
+    "oblique/rebuilt-surface/c7b5e5284f5664b6504f.b3dm": {
+      "bytes": 60220,
+      "sha256": "c7b5e5284f5664b6504f6af17714c10f126382037c7b39b4a8e7ca17fd880a1a"
+    },
+    "oblique/rebuilt-surface/ca7f255071327227d03b.b3dm": {
+      "bytes": 386124,
+      "sha256": "ca7f255071327227d03b5ad9a786f561a933d5eb90a5766f66a265f96061c8c6"
+    },
+    "oblique/rebuilt-surface/cb08f6998a7cfb7201a1.b3dm": {
+      "bytes": 240960,
+      "sha256": "cb08f6998a7cfb7201a125d97a6cb31f8b40ac483fb318450ee7bff0f0207d24"
+    },
+    "oblique/rebuilt-surface/cbb94e393d56f68a486c.b3dm": {
+      "bytes": 64184,
+      "sha256": "cbb94e393d56f68a486cd929dfb5bc486f8d973be52a1777e165fb747828890d"
+    },
+    "oblique/rebuilt-surface/cbbb93818970e80595be.b3dm": {
+      "bytes": 255068,
+      "sha256": "cbbb93818970e80595be2b51d2a63b6e4862ad9f8af467a43d75fc913b1b9854"
+    },
+    "oblique/rebuilt-surface/cd08f0acb98462ef1ee6.b3dm": {
+      "bytes": 103876,
+      "sha256": "cd08f0acb98462ef1ee62699f79059ffaf8de22266e3bbc988fbcb2e2732ea11"
+    },
+    "oblique/rebuilt-surface/cdce8699e623939a0b71.b3dm": {
+      "bytes": 54964,
+      "sha256": "cdce8699e623939a0b71deec64f5014a7b9430a51951a005d68b116d76b9099f"
+    },
+    "oblique/rebuilt-surface/cef599c56c17cfb6d3a9.b3dm": {
+      "bytes": 101968,
+      "sha256": "cef599c56c17cfb6d3a974361f547c0dda2547a7b56ef46b074ec0cf34224eef"
+    },
+    "oblique/rebuilt-surface/cf216b452c1673ffa840.b3dm": {
+      "bytes": 166956,
+      "sha256": "cf216b452c1673ffa84054ae10388fd360716b169397d353de6d10ffc881d344"
+    },
+    "oblique/rebuilt-surface/cfb6803e6835e2de9534.b3dm": {
+      "bytes": 67152,
+      "sha256": "cfb6803e6835e2de9534ee1d871def12aa3054e2b883054c4fbc3e906467c886"
+    },
+    "oblique/rebuilt-surface/d07154d6c8fa53488434.b3dm": {
+      "bytes": 76072,
+      "sha256": "d07154d6c8fa5348843461bed07580311fc24bb0c3af73b752546b6869d31acd"
+    },
+    "oblique/rebuilt-surface/d1157e7901d89e8c3fac.b3dm": {
+      "bytes": 384888,
+      "sha256": "d1157e7901d89e8c3fac097eb6121111f55809d760685fd609b20691eb5f2798"
+    },
+    "oblique/rebuilt-surface/d41653d5b98b6d2c73c0.b3dm": {
+      "bytes": 75284,
+      "sha256": "d41653d5b98b6d2c73c065baf126ab9c27dab61f1cd58f01cd5394f3f4d365e6"
+    },
+    "oblique/rebuilt-surface/d47ff6b65c06b7b27d53.b3dm": {
+      "bytes": 40336,
+      "sha256": "d47ff6b65c06b7b27d53b12fe4184def61f6b89bb982665867f078dd40812fd5"
+    },
+    "oblique/rebuilt-surface/d4ad76eab196784e6bca.b3dm": {
+      "bytes": 69992,
+      "sha256": "d4ad76eab196784e6bcaeb3a15e1111799e172c17607e70f89abc64db50c9696"
+    },
+    "oblique/rebuilt-surface/d96da026f80b94cc07ed.b3dm": {
+      "bytes": 55700,
+      "sha256": "d96da026f80b94cc07edb97238cca29d0652203f0f721cec67b858bdb6df96d0"
+    },
+    "oblique/rebuilt-surface/da5506cc6d521fd16282.b3dm": {
+      "bytes": 62860,
+      "sha256": "da5506cc6d521fd16282ef92497cd06433c55ad766742e76d301720cf1cec38b"
+    },
+    "oblique/rebuilt-surface/dcb0a364795cd85e7473.b3dm": {
+      "bytes": 105484,
+      "sha256": "dcb0a364795cd85e74736f15d907c7ada9c65c58da61a5e80e25a8c3fabc67a2"
+    },
+    "oblique/rebuilt-surface/dcff304b7bd855939f0c.b3dm": {
+      "bytes": 122796,
+      "sha256": "dcff304b7bd855939f0cbab2318a821672b2588e5a5532df159a17682790e81d"
+    },
+    "oblique/rebuilt-surface/ddc081474cf8e45d51f1.b3dm": {
+      "bytes": 59816,
+      "sha256": "ddc081474cf8e45d51f134cd3b3d6a5d482f1d11a8098c80e19ba359b5aef7fa"
+    },
+    "oblique/rebuilt-surface/dfb5918c16719a2857a8.b3dm": {
+      "bytes": 102952,
+      "sha256": "dfb5918c16719a2857a8902d958fc880a3715c6a5a0bb698294be0b0a80eb900"
+    },
+    "oblique/rebuilt-surface/e0766c452a8cb58f0341.b3dm": {
+      "bytes": 182636,
+      "sha256": "e0766c452a8cb58f03417afbb2ee0535638f4816b2b51c5e27a6e9d6c7635b4f"
+    },
+    "oblique/rebuilt-surface/e1ff8ed39eae10fba53c.b3dm": {
+      "bytes": 54736,
+      "sha256": "e1ff8ed39eae10fba53ce3e73c50b9a5870caaa33ab06be290ae7079a8e0e201"
+    },
+    "oblique/rebuilt-surface/e3ddba8de28813865054.b3dm": {
+      "bytes": 101228,
+      "sha256": "e3ddba8de28813865054385063e110e1cc279c5010edac97d8d4d9296eb34baa"
+    },
+    "oblique/rebuilt-surface/e4093453e5d6acce8175.b3dm": {
+      "bytes": 142584,
+      "sha256": "e4093453e5d6acce8175a3658a810ffb4510e4515aff94555e27a0cf3200fe9a"
+    },
+    "oblique/rebuilt-surface/e77767235359b240f89f.b3dm": {
+      "bytes": 341764,
+      "sha256": "e77767235359b240f89f301ed84de097ef577fdf82b98bd8879160f062489ce0"
+    },
+    "oblique/rebuilt-surface/e77c6e256ba2dc894fd2.b3dm": {
+      "bytes": 124480,
+      "sha256": "e77c6e256ba2dc894fd280bca8ca2786a6b29aa30997357a85d0e7d4f82b0e8f"
+    },
+    "oblique/rebuilt-surface/e855ba72671067f88a28.b3dm": {
+      "bytes": 105588,
+      "sha256": "e855ba72671067f88a2848553377b7ae3abc2e1b4197c53ba4f89a4c9f69829c"
+    },
+    "oblique/rebuilt-surface/e8a7402fea9ea8c5118a.b3dm": {
+      "bytes": 54876,
+      "sha256": "e8a7402fea9ea8c5118a909277405266d52c3f6c1c52e7d64c2b356ed01a7a67"
+    },
+    "oblique/rebuilt-surface/e945d154639ff631e05e.b3dm": {
+      "bytes": 39312,
+      "sha256": "e945d154639ff631e05e829eaf4e02d362924537ffa954de5a43697b2c1fac50"
+    },
+    "oblique/rebuilt-surface/e9b41d551a76659fdf77.b3dm": {
+      "bytes": 42952,
+      "sha256": "e9b41d551a76659fdf77c20b84563e67ec1b84e493d2dfd1dd54956855329fc3"
+    },
+    "oblique/rebuilt-surface/ea23eb91a85f401c3c37.b3dm": {
+      "bytes": 60480,
+      "sha256": "ea23eb91a85f401c3c377751dd9fba04438c4abc8abc76e068a465b335ac8173"
+    },
+    "oblique/rebuilt-surface/ea8c40b294bdb69b4095.b3dm": {
+      "bytes": 195084,
+      "sha256": "ea8c40b294bdb69b40953e72bf2aec38dfc7adb620b2d48930695f1bf6b19816"
+    },
+    "oblique/rebuilt-surface/ec4483fb0b3aa8b4dde2.b3dm": {
+      "bytes": 180940,
+      "sha256": "ec4483fb0b3aa8b4dde276d163b52bba7f8b75541376c03b8e14e9f6b530e0a0"
+    },
+    "oblique/rebuilt-surface/ec9d9e9d86cb5001cd76.b3dm": {
+      "bytes": 480936,
+      "sha256": "ec9d9e9d86cb5001cd760c27e4ca58963c10d51ae09c89f9b3d622926a0f6a28"
+    },
+    "oblique/rebuilt-surface/ef916db654883f1301a6.b3dm": {
+      "bytes": 83296,
+      "sha256": "ef916db654883f1301a6ab63a86b454a391df42b0b6553e91fa37c00fbdea014"
+    },
+    "oblique/rebuilt-surface/efeec6f8acb4e315997d.b3dm": {
+      "bytes": 175592,
+      "sha256": "efeec6f8acb4e315997db0c3ad9c1edd5d7910885a5fc58ada91429bf871b0b4"
+    },
+    "oblique/rebuilt-surface/f14e24111abe4c9666f6.b3dm": {
+      "bytes": 115540,
+      "sha256": "f14e24111abe4c9666f66f4248e3d5912f5aa3f531a39a525692c536becb726b"
+    },
+    "oblique/rebuilt-surface/f1625e3a2467a54994c5.b3dm": {
+      "bytes": 405528,
+      "sha256": "f1625e3a2467a54994c56f1c307077dae1e71c065a2355dce4b77d3b54d3a379"
+    },
+    "oblique/rebuilt-surface/f3e60edec17ae60abf15.b3dm": {
+      "bytes": 65596,
+      "sha256": "f3e60edec17ae60abf15c4c0432dd25d0c5613ee1f9cba481c656813ba6108ea"
+    },
+    "oblique/rebuilt-surface/f3f3bb6e47bffb98dcba.b3dm": {
+      "bytes": 87344,
+      "sha256": "f3f3bb6e47bffb98dcbafa46869520886a5d6b9bc380c4b39c04e523e8d17aad"
+    },
+    "oblique/rebuilt-surface/f4a42e2fd2f8eb0fb224.b3dm": {
+      "bytes": 48616,
+      "sha256": "f4a42e2fd2f8eb0fb2240615e28bf40b89fa11f965c08c08129eba4c68e0debc"
+    },
+    "oblique/rebuilt-surface/f5f595d55042d51a6645.b3dm": {
+      "bytes": 57548,
+      "sha256": "f5f595d55042d51a664590e3f13fea35c49ed0bc1ac6282dba59d694287f87e1"
+    },
+    "oblique/rebuilt-surface/f77fb228e27212f890ec.b3dm": {
+      "bytes": 79624,
+      "sha256": "f77fb228e27212f890ec235ea3a743fb291845a724f75d1de4abc3c7d16a5a99"
+    },
+    "oblique/rebuilt-surface/f998e74850d8b04f8c7e.b3dm": {
+      "bytes": 105612,
+      "sha256": "f998e74850d8b04f8c7e8615ef95f097010de9a261fe064632ccfa9fdd94bbaa"
+    },
+    "oblique/rebuilt-surface/f9e1b7ff314bd09d367f.b3dm": {
+      "bytes": 139692,
+      "sha256": "f9e1b7ff314bd09d367f1db65588cc693a932c0803d688652711ae6d420bd6f4"
+    },
+    "oblique/rebuilt-surface/fa389d372321af683755.b3dm": {
+      "bytes": 75268,
+      "sha256": "fa389d372321af683755e49cc90f363fad5386cc0b907c78f65de742587bc7f8"
+    },
+    "oblique/rebuilt-surface/fb79a881e6e07325cd3b.b3dm": {
+      "bytes": 1039328,
+      "sha256": "fb79a881e6e07325cd3b3de050082af080f2cb48c98744f927f33052a9a5c022"
+    },
+    "oblique/rebuilt-surface/fbfb7cd5e7508803ef41.b3dm": {
+      "bytes": 58656,
+      "sha256": "fbfb7cd5e7508803ef41b94f1eb64c3d0382a4a44d5236b1a5cae26aae382dc3"
+    },
+    "oblique/rebuilt-surface/fcf96a359634e44c7f19.b3dm": {
+      "bytes": 95984,
+      "sha256": "fcf96a359634e44c7f19da92b9dd34c68822caf6e42c5342485a93d71abefc91"
+    },
+    "oblique/rebuilt-surface/fd4ac2fc22de9db7a296.b3dm": {
+      "bytes": 135480,
+      "sha256": "fd4ac2fc22de9db7a29618b26b14e481faeee4561694e212ccef296090b06430"
+    },
+    "oblique/rebuilt-surface/fd617b5d099268d37db0.b3dm": {
+      "bytes": 80148,
+      "sha256": "fd617b5d099268d37db02bb64ec3217d198706d4ff8d14cff863342f9467c431"
+    },
+    "oblique/rebuilt-surface/fdcca593919b41c479a6.b3dm": {
+      "bytes": 61952,
+      "sha256": "fdcca593919b41c479a6c894df44900a239989f6adcefb3c891c499329341b87"
+    },
+    "oblique/rebuilt-surface/fe5b0076f54b8297c14c.b3dm": {
+      "bytes": 211368,
+      "sha256": "fe5b0076f54b8297c14c9a4343e18c7e5c809bfc91920c6639d90d0cd7ea8508"
+    },
+    "oblique/rebuilt-surface/fee7912a6238d775716d.b3dm": {
+      "bytes": 82560,
+      "sha256": "fee7912a6238d775716d8ef0718d539398a0a53fad340972db68599bacc886ae"
+    },
+    "oblique/rebuilt-surface/tileset.json": {
+      "bytes": 45907,
+      "sha256": "075e05632932403e8a66c8c582ff7a3024b9913ffa33d0e4ba878ec00b14ab4d"
+    },
     "oblique/surface-repair.json": {
       "bytes": 4191,
       "sha256": "5607ae6f1ec77cf74d798464fea1f873f7efca9a1cad6af0c74e3edd1d43ab54"
@@ -1057,12 +2074,12 @@
       "sha256": "5619d7207cec190f6f9880418ba2260da05ac7a9a705e7883f26b10b26ce2d5c"
     },
     "oblique.js": {
-      "bytes": 7663,
-      "sha256": "326da9fa55c9629ee98e209ca3d37a1c6c22920e4739c8bb4c5410066b6aaa1e"
+      "bytes": 8072,
+      "sha256": "42abe34ad7eca512bacc57111019c370638450dc16398c891de1abfd959c1a56"
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
-      "sha256": "c594657e57a541322a26700785f96e46ec320a5fb72744a9445805c5f9529673"
+      "sha256": "45e2fc42f47024bbb8c518f280aa806e5eb6bdc932c5eaf80e6457038fe9c2b3"
     },
     "oblique_surface_repair.js": {
       "bytes": 4780,
@@ -1073,8 +2090,8 @@
       "sha256": "3a870fdbb7e419aa55af3c0107434d82b5efe17e6c31c03a1a440be4f5cc0581"
     },
     "README.md": {
-      "bytes": 989,
-      "sha256": "7dc4ef20f26ed18e77f8a41e5032f31f33ce281558ded82a7dc713dfcff2a3cb"
+      "bytes": 1023,
+      "sha256": "dbc1c4e5f071de204d017af7e76cb0cd70f5f2c4bc4c62ad9e57cd5546107dda"
     },
     "runtime/561029c510a45242-v2.part-00.bin.gz": {
       "bytes": 25165824,
@@ -1105,8 +2122,8 @@
       "sha256": "643872274d198887b9328b3abcc9fc01179ec75a22650e2ace6e3c1e46c7aa19"
     },
     "terrain.js": {
-      "bytes": 4766,
-      "sha256": "4017c56267000fe2536e7a97ed4e683a9ce91056157d478b82d9441deb701d77"
+      "bytes": 4949,
+      "sha256": "4182c761e51d0a89a7547ec39a568fd63b784cae69d30e0e53d1066596470926"
     },
     "terrain.json": {
       "bytes": 793894,
@@ -1170,7 +2187,7 @@
     },
     "viewer.js": {
       "bytes": 20056,
-      "sha256": "f813ec69347edfdc405f108c38cbe13464fbbcf5f29589c287990a21ac8ea7ff"
+      "sha256": "bcd1a60150fb73bcffac99981c45c1594d5c4e8dc51c132becd13cf5225a56c6"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,

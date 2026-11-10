@@ -1,5 +1,5 @@
 {
-  "entry": "./oblique/tileset.json",
+  "entry": "./oblique/rebuilt-surface/tileset.json",
   "bounds": [
     -850,
     -300,
@@ -211,6 +211,8 @@
     "buildTag": "6d3a5137bf81"
   },
   "coverageTexture": "./oblique/lod/6d3a5137bf81/coverage.png",
+  "preRepaired": true,
   "staticRelease": true,
-  "publication": "测绘图边界内裁剪的静态实景；保留至原数据0.5m误差级，原始全分辨率文件留在本地"
+  "repairMethod": "离线重建全部显示LOD；无运行时纹理替换",
+  "patchColor": "#3d5b50"
 }
