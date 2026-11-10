@@ -2,7 +2,6 @@ import * as T from 'three';
 import {TilesRenderer} from '3d-tiles-renderer/three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
-import {createSurfaceRepair} from './oblique_surface_repair.js';
 
 // A running page can still hold an older terrain module across a viewer update.
 // Restore the visibility contract as well as versioning the module imports.
@@ -21,7 +20,7 @@ export function ensureTerrainOblique(terrain){
 export async function setupOblique({scene,camera,renderer,terrain}){
  const terrainAPI=ensureTerrainOblique(terrain),setTerrainOblique=terrainAPI.set;
  const el=document.createElement('section');el.id='obliqueControls';
- el.innerHTML='<div class="rule"></div><b>倾斜摄影</b><label><input id="obliqueShow" type="checkbox" checked>显示倾斜摄影（地形图范围内）</label><select id="obliqueQuality" aria-label="倾斜摄影精度"><option value="32">流畅</option><option value="16" selected>均衡</option><option value="8">精细</option></select><label><input id="obliqueRepair" type="checkbox" checked>修补表面破洞／纹理黑边</label><small id="obliqueRepairStatus">修补层等待实景载入…</small><label>高程微调 <input id="obliqueHeight" type="number" value="0" min="-200" max="200" step="0.1" style="width:85px"> m</label><small id="obliqueStatus">正在读取本地实景入口…</small><small style="display:block">按测绘图边界裁剪，缺覆盖处保留测绘地形。小孔按邻面补齐，河道与外边界保持开放；缺失处为插值表面。</small>';
+ el.innerHTML='<div class="rule"></div><b>倾斜摄影</b><label><input id="obliqueShow" type="checkbox" checked>显示倾斜摄影（地形图范围内）</label><select id="obliqueQuality" aria-label="倾斜摄影精度"><option value="32">流畅</option><option value="16" selected>均衡</option><option value="8">精细</option></select><label>高程微调 <input id="obliqueHeight" type="number" value="0" min="-200" max="200" step="0.1" style="width:85px"> m</label><small id="obliqueStatus">正在读取本地实景入口…</small><small style="display:block">按测绘图边界裁剪，缺覆盖处保留测绘地形。小孔按邻面补齐，河道与外边界保持开放；缺失处为插值表面。</small>';
  document.getElementById('site').parentElement.after(el);
  const $=s=>document.getElementById(s),status=$('obliqueStatus');
  let config,tiles,group,repair,models=0,failures=0,lastText=0,enabled=true,disposed=false;
@@ -48,10 +47,7 @@ export async function setupOblique({scene,camera,renderer,terrain}){
   const gltf=new GLTFLoader(tiles.manager);gltf.setDRACOLoader(draco);tiles.manager.addHandler(/\.(gltf|glb)$/i,gltf);
   tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=16;tiles.loadAncestors=true;tiles.loadSiblings=true;
   tiles.lruCache.maxSize=180;tiles.lruCache.minSize=120;tiles.downloadQueue.maxJobs=3;tiles.parseQueue.maxJobs=1;
-  const repairResponse=await fetch('./oblique/surface-repair.json');if(!repairResponse.ok)throw Error('实景修补范围配置未生成');
-  const repairConfig=await repairResponse.json();
-  repair=config.preRepaired?{add(){},remove(){},dispose(){},setEnabled(){},enabled:true,get stats(){return {models,holes:0,pending:0,errors:0,pendingBlackMeshes:0}},details:[]}:createSurfaceRepair({tiles,bounds:[x0,y0,x1,y1],water:repairConfig.water});
-  if(config.preRepaired){$('obliqueRepair').disabled=true;$('obliqueRepair').parentElement.lastChild.textContent='已离线重建修补（无动态替换）'}
+  repair={add(){},remove(){},dispose(){},enabled:true,get stats(){return {models,holes:0,pending:0,errors:0,pendingBlackMeshes:0}},details:[]};
   tiles.addEventListener('load-model',({scene:content})=>{
    models++;content.traverse(o=>{if(!o.isMesh)return;const old=Array.isArray(o.material)?o.material:[o.material];
     const converted=old.map(m=>new T.MeshBasicMaterial({map:m.map,color:m.color,side:T.DoubleSide,transparent:m.transparent,opacity:m.opacity,alphaTest:m.alphaTest}));
@@ -63,7 +59,6 @@ export async function setupOblique({scene,camera,renderer,terrain}){
   tiles.addEventListener('load-error',e=>{failures++;status.textContent=`部分实景瓦片读取失败（${failures}）：${e.error?.message||e.url}`;});
   function sync(){group.visible=enabled&&terrain.mode==='3d';setTerrainOblique(group.visible&&models>0)}
   $('obliqueShow').onchange=()=>{enabled=$('obliqueShow').checked;sync()};
-  $('obliqueRepair').onchange=()=>repair.setEnabled($('obliqueRepair').checked);
   $('obliqueQuality').onchange=()=>tiles.errorTarget=Number($('obliqueQuality').value);
   $('obliqueHeight').onchange=()=>{const h=Number($('obliqueHeight').value);if(Number.isFinite(h)&&Math.abs(h)<=200){group.position.y=h;group.updateMatrixWorld(true)}};
   const oldMode=$('terrainMode').onchange;$('terrainMode').onchange=()=>{oldMode();sync()};
@@ -75,7 +70,7 @@ export async function setupOblique({scene,camera,renderer,terrain}){
    if(group.visible!==visible){group.visible=visible;setTerrainOblique(visible&&models>0)}
    if(!visible)return;
    camera.updateMatrixWorld();tiles.group.updateMatrixWorld(true);tiles.update();
-   const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${failures?' · 失败 '+failures:''}`;const s=repair.stats;$('obliqueRepairStatus').textContent=config.preRepaired?'已加载离线重建纹理和补面，无运行时修补':repair.enabled?`表面修补已开启 · 已处理 ${s.models} 个网格${s.pending?' · 继续处理 '+s.pending+' 个':''}${s.errors?' · 跳过 '+s.errors+' 个异常':''}`:'修补已关闭，显示原始表面';lastText=now}
+   const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${failures?' · 失败 '+failures:''}`;lastText=now}
   };
   current.dispose=()=>{disposed=true;tiles.dispose();repair.dispose();draco.dispose();scene.remove(group);setTerrainOblique(false)};
   status.textContent=`实景入口已就绪，范围内 ${config.retainedRootTiles}/${config.sourceRootTiles} 个根瓦片`;

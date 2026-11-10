@@ -1,9 +1,9 @@
-import {loadModel} from './model_loader.js?v=a1b9d191607c';
+import {loadModel} from './model_loader.js?v=875bada405be';
 import * as T from 'three';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {loadTerrain} from './terrain.js?v=a1b9d191607c';
-import {setupCrossSections} from './cross_sections.js?v=a1b9d191607c';
-import {setupSection3D} from './section_3d.js?v=a1b9d191607c';
+import {loadTerrain} from './terrain.js?v=875bada405be';
+import {setupCrossSections} from './cross_sections.js?v=875bada405be';
+import {setupSection3D} from './section_3d.js?v=875bada405be';
 const $=s=>document.getElementById(s),scene=new T.Scene();scene.background=new T.Color('#e7edf2');
 const startupAt=performance.now(),progress=text=>$('status').textContent=text;progress('正在初始化显示…');
 const camera=new T.PerspectiveCamera(40,innerWidth/innerHeight,.5,15000),renderer=new T.WebGPURenderer({antialias:true,logarithmicDepthBuffer:true});
@@ -44,7 +44,7 @@ const mainList=model.meshes.filter(m=>m.cat==='主桥箱梁'||(/(39|40|41|42)号
 progress('正在读取测绘地形…');const terrain=await loadTerrain(scene,camera);const sections=setupCrossSections(model);const section3D=setupSection3D({model,sections});$('waterEffect').onchange=()=>terrain.setEffect($('waterEffect').value);$('waterOpacity').oninput=()=>{terrain.setOpacity(Number($('waterOpacity').value)/100);$('waterOpacityValue').textContent=$('waterOpacity').value+'%'};
 $('terrainMode').onchange=()=>terrain.setMode($('terrainMode').value);$('water').onchange=()=>terrain.setWater($('water').checked);$('survey').onchange=()=>terrain.setPoints($('survey').checked);$('site').onclick=()=>fit(terrain.bounds);
 let oblique={};
-function startOblique(){import('./oblique.js?v=a1b9d191607c').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
+function startOblique(){import('./oblique.js?v=875bada405be').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
 function setXray(enabled){xray=enabled;const opacity=Number($('opacity').value)/100;for(const [name,c] of cats){if(fadeCats.has(name)){const m=c.solid.material;m.transparent=xray;m.opacity=xray?opacity:1;m.depthWrite=!xray;m.side=xray?T.FrontSide:T.DoubleSide;m.needsUpdate=true;c.solid.renderOrder=xray?2:0}}$('xray').classList.toggle('active',xray);$('opacityRow').hidden=!xray;$('opacityValue').textContent=$('opacity').value+'%';setMode()}
 $('xray').onclick=()=>setXray(!xray);$('opacity').oninput=()=>setXray(true);
 $('all').onclick=()=>fit(allBounds);$('main').onclick=()=>fit(mainBounds);$('top').onclick=()=>{viewDir.set(0,1,.0001);fit(selected?unitBounds(units.get(selected.unit)):mainBounds)};$('side').onclick=()=>{viewDir.set(0,.05,1);fit(selected?unitBounds(units.get(selected.unit)):mainBounds)};

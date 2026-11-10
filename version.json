@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "revision": "a1b9d191607c",
+  "revision": "875bada405be",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
   "modelRevision": "offline-rebuilt-surface",
@@ -19,11 +19,11 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "dc936d2f0ea30845fc389bd895d768d68aa76d6b7ade6de67930df72d6581c6a"
+      "sha256": "5d57846484ac36bc91a27cbdf98826a0f49a80911d8aa2cd673cae13ffeed573"
     },
     "model_loader.js": {
       "bytes": 782,
-      "sha256": "dc2a742f66443f066b3518954598b801823bf002ef2855add0facbb93b96380e"
+      "sha256": "a567e59454abda06e4af0476d1f346b30e10a9dea00a288717414c32a4a56e95"
     },
     "model_worker.js": {
       "bytes": 5542,
@@ -2074,12 +2074,12 @@
       "sha256": "5619d7207cec190f6f9880418ba2260da05ac7a9a705e7883f26b10b26ce2d5c"
     },
     "oblique.js": {
-      "bytes": 8072,
-      "sha256": "42abe34ad7eca512bacc57111019c370638450dc16398c891de1abfd959c1a56"
+      "bytes": 6948,
+      "sha256": "14e5778cd40abb0cd86d7ee71cbed06d3330f01ff1e03306ddaf739d63d89184"
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
-      "sha256": "45e2fc42f47024bbb8c518f280aa806e5eb6bdc932c5eaf80e6457038fe9c2b3"
+      "sha256": "bfb13143fbb286815732a72835d7f2de2575ec4a3f340ccd4dcfdfba2463b385"
     },
     "oblique_surface_repair.js": {
       "bytes": 4780,
@@ -2187,15 +2187,15 @@
     },
     "viewer.js": {
       "bytes": 20056,
-      "sha256": "bcd1a60150fb73bcffac99981c45c1594d5c4e8dc51c132becd13cf5225a56c6"
+      "sha256": "dbdadf9f9e67074da8983358faa2687dcff9386dab2b5481188e5bde170b3c3e"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,
       "sha256": "8b18938dd1f61bf8656cd69a50eb99686fdff0c0314620475cba5881aa628170"
     },
     "实景表面修补说明.md": {
-      "bytes": 3683,
-      "sha256": "35739f5c1d5b2a0c20f46e33a31c1203fd3d5b6130f39321a4bcc99df7618738"
+      "bytes": 4161,
+      "sha256": "87c87ea8fa526b4aaa8d73a9474a8d9286072f91a2e3511db5597821f5f1ec8c"
     },
     "工程参数.json": {
       "bytes": 249060,
