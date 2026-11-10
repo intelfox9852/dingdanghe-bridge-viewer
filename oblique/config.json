@@ -1,0 +1,216 @@
+{
+  "entry": "./oblique/tileset.json",
+  "bounds": [
+    -850,
+    -300,
+    850,
+    300
+  ],
+  "earthToThree": [
+    0.7819048001828359,
+    -0.4025114979594946,
+    0.4760392858851246,
+    0,
+    0.5913061218274241,
+    0.7207206450402737,
+    -0.3618301254754532,
+    0,
+    -0.19745045865605562,
+    0.5643990645185113,
+    0.8015423717364767,
+    0,
+    -4762.975747704302,
+    -6371332.963520206,
+    19336.755381427876,
+    1
+  ],
+  "sourceRootTiles": 722,
+  "retainedRootTiles": 64,
+  "excludedRootTiles": 658,
+  "projection": "+proj=tmerc +lat_0=0 +lon_0=119.333333333333333 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs",
+  "bridgeRegistration": "S4-3-5桩位表，CGCS2000，中央子午线119°20′；地形配准.json",
+  "heightStatus": "沿用3D Tiles原始高程；数据未声明垂直基准，暂不自动改高程，可在界面微调",
+  "coordinateCheck": [
+    {
+      "engineeringXY": [
+        -850,
+        -300
+      ],
+      "horizontalError_m": 7.024427015858172e-05,
+      "verticalCurvature_m": -0.06374804861843586
+    },
+    {
+      "engineeringXY": [
+        -850,
+        0
+      ],
+      "horizontalError_m": 0.00011674148390433685,
+      "verticalCurvature_m": -0.05664485413581133
+    },
+    {
+      "engineeringXY": [
+        -850,
+        300
+      ],
+      "horizontalError_m": 0.00016619790716719857,
+      "verticalCurvature_m": -0.06369828432798386
+    },
+    {
+      "engineeringXY": [
+        0,
+        -300
+      ],
+      "horizontalError_m": 3.985239300556562e-05,
+      "verticalCurvature_m": -0.007060600444674492
+    },
+    {
+      "engineeringXY": [
+        0,
+        0
+      ],
+      "horizontalError_m": 1.352173705214825e-12,
+      "verticalCurvature_m": 0
+    },
+    {
+      "engineeringXY": [
+        0,
+        300
+      ],
+      "horizontalError_m": 1.44967873042087e-05,
+      "verticalCurvature_m": -0.007096013054251671
+    },
+    {
+      "engineeringXY": [
+        850,
+        -300
+      ],
+      "horizontalError_m": 0.00011599601475515874,
+      "verticalCurvature_m": -0.06355908047407866
+    },
+    {
+      "engineeringXY": [
+        850,
+        0
+      ],
+      "horizontalError_m": 0.00015080083199544542,
+      "verticalCurvature_m": -0.05654108989983797
+    },
+    {
+      "engineeringXY": [
+        850,
+        300
+      ],
+      "horizontalError_m": 0.00021374446189456435,
+      "verticalCurvature_m": -0.06367971003055573
+    }
+  ],
+  "clipping": "原测绘图[-850,850]×[-300,300]；新父级几何精确裁剪、细级由相同四平面裁剪；缺实景区域保留测绘TIN",
+  "originalFiles": "仅只读服务原始数据；裁剪为本地显示裁剪，不改删原始文件",
+  "topLOD": {
+    "root": {
+      "bytes": 922372,
+      "vertices": 25141,
+      "triangles": 31216,
+      "texture": [
+        1024,
+        1024
+      ],
+      "sourceParts": 61
+    },
+    "groups": [
+      {
+        "bytes": 106108,
+        "vertices": 2553,
+        "triangles": 3264,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 8
+      },
+      {
+        "bytes": 73768,
+        "vertices": 1696,
+        "triangles": 2227,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 7
+      },
+      {
+        "bytes": 137084,
+        "vertices": 3607,
+        "triangles": 3726,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 8
+      },
+      {
+        "bytes": 127876,
+        "vertices": 3176,
+        "triangles": 3947,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 8
+      },
+      {
+        "bytes": 109484,
+        "vertices": 2565,
+        "triangles": 3610,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 7
+      },
+      {
+        "bytes": 162660,
+        "vertices": 4148,
+        "triangles": 5422,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 8
+      },
+      {
+        "bytes": 151408,
+        "vertices": 3882,
+        "triangles": 4958,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 7
+      },
+      {
+        "bytes": 131544,
+        "vertices": 3514,
+        "triangles": 4062,
+        "texture": [
+          512,
+          512
+        ],
+        "sourceParts": 8
+      }
+    ],
+    "sourceTiles": 64,
+    "sourceCoarseBytes": 1052504,
+    "groupCount": 8,
+    "geometryErrors_m": [
+      16,
+      8,
+      4
+    ],
+    "status": "重新生成可渲染顶层与分组层；保留原始更细LOD，原始文件只读",
+    "buildTag": "6d3a5137bf81"
+  },
+  "coverageTexture": "./oblique/lod/6d3a5137bf81/coverage.png",
+  "staticRelease": true,
+  "publication": "测绘图边界内裁剪的静态实景；保留至原数据0.5m误差级，原始全分辨率文件留在本地"
+}
