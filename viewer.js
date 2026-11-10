@@ -1,19 +1,22 @@
-import {loadModel} from './model_loader.js?v=875bada405be';
+import {loadModel,mobileDevice,lightweight} from './model_loader.js?v=3ec7c271a8e5';
 import * as T from 'three';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {loadTerrain} from './terrain.js?v=875bada405be';
-import {setupCrossSections} from './cross_sections.js?v=875bada405be';
-import {setupSection3D} from './section_3d.js?v=875bada405be';
+import {loadTerrain} from './terrain.js?v=3ec7c271a8e5';
+import {setupCrossSections} from './cross_sections.js?v=3ec7c271a8e5';
+import {setupSection3D} from './section_3d.js?v=3ec7c271a8e5';
 const $=s=>document.getElementById(s),scene=new T.Scene();scene.background=new T.Color('#e7edf2');
 const startupAt=performance.now(),progress=text=>$('status').textContent=text;progress('正在初始化显示…');
 const camera=new T.PerspectiveCamera(40,innerWidth/innerHeight,.5,15000),renderer=new T.WebGPURenderer({antialias:true,logarithmicDepthBuffer:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);document.body.prepend(renderer.domElement);
+renderer.setPixelRatio(Math.min(devicePixelRatio,mobileDevice?1:1.7));renderer.setSize(innerWidth,innerHeight);document.body.prepend(renderer.domElement);
 await renderer.init();
 const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.12;controls.maxDistance=6000;controls.minDistance=1;
 scene.add(new T.HemisphereLight(0xffffff,0x8897a3,2.1));const light=new T.DirectionalLight(0xffffff,2.3);light.position.set(-200,400,200);scene.add(light);
 progress('正在读取桥梁…');
 const loaded=await loadModel(progress),model=loaded.model,renderCache=loaded.cache;
 window.startupTiming={...loaded.timing,modelReady_ms:performance.now()-startupAt};progress('正在准备桥梁显示…');
+if(mobileDevice||lightweight)$('mode').value='solid';
+const qualityRow=document.createElement('label');qualityRow.textContent='模型精度 ';const quality=document.createElement('select');quality.id='modelQuality';quality.innerHTML='<option value="mobile">轻量显示</option><option value="full">完整精度</option>';quality.value=loaded.timing.mobile?'mobile':'full';quality.onchange=()=>{const u=new URL(location.href);u.searchParams.set('quality',quality.value);location.href=u.href};qualityRow.append(quality);$('mode').after(qualityRow);
+if(loaded.timing.mobile){const note=document.createElement('small');note.textContent='轻量显示：全部构件保留，钢束显示中心线偏差≤2.1mm；点击构件按需读取原始参数。';qualityRow.after(note)}
 const steelCats=new Set(['顶板束','腹板束','底板束','引桥钢束','引桥正弯矩束','引桥负弯矩束']),fadeCats=new Set(['主桥箱梁','引桥箱梁','引桥横梁','引桥堵头板','引桥湿接头','引桥齿板','调平层','桥面铺装','护栏','白色标线']);
 const steelScope=document.createElement('small');steelScope.textContent='引桥：第3联25.5m钢束320束；30m正弯矩2496束、负弯矩1624束。按专图与QT通用图恢复，适配长度及待核事项见属性。';$('steelLayers').after(steelScope);
 const cats=new Map(),units=new Map(),hiddenUnits=new Set();let detailState=null,detailMeshes=null;let selected=null,highlight=null,highlightWire=null,mode='both',measuring=false,points=[],measureLine=null,xray=false,viewDir=new T.Vector3(.55,.42,.85);
@@ -44,13 +47,20 @@ const mainList=model.meshes.filter(m=>m.cat==='主桥箱梁'||(/(39|40|41|42)号
 progress('正在读取测绘地形…');const terrain=await loadTerrain(scene,camera);const sections=setupCrossSections(model);const section3D=setupSection3D({model,sections});$('waterEffect').onchange=()=>terrain.setEffect($('waterEffect').value);$('waterOpacity').oninput=()=>{terrain.setOpacity(Number($('waterOpacity').value)/100);$('waterOpacityValue').textContent=$('waterOpacity').value+'%'};
 $('terrainMode').onchange=()=>terrain.setMode($('terrainMode').value);$('water').onchange=()=>terrain.setWater($('water').checked);$('survey').onchange=()=>terrain.setPoints($('survey').checked);$('site').onclick=()=>fit(terrain.bounds);
 let oblique={};
-function startOblique(){import('./oblique.js?v=875bada405be').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
+function startOblique(){import('./oblique.js?v=3ec7c271a8e5').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain,mobile:mobileDevice||lightweight})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
+if(mobileDevice||lightweight){$('waterEffect').value='plain';terrain.setEffect('plain')}
 function setXray(enabled){xray=enabled;const opacity=Number($('opacity').value)/100;for(const [name,c] of cats){if(fadeCats.has(name)){const m=c.solid.material;m.transparent=xray;m.opacity=xray?opacity:1;m.depthWrite=!xray;m.side=xray?T.FrontSide:T.DoubleSide;m.needsUpdate=true;c.solid.renderOrder=xray?2:0}}$('xray').classList.toggle('active',xray);$('opacityRow').hidden=!xray;$('opacityValue').textContent=$('opacity').value+'%';setMode()}
 $('xray').onclick=()=>setXray(!xray);$('opacity').oninput=()=>setXray(true);
 $('all').onclick=()=>fit(allBounds);$('main').onclick=()=>fit(mainBounds);$('top').onclick=()=>{viewDir.set(0,1,.0001);fit(selected?unitBounds(units.get(selected.unit)):mainBounds)};$('side').onclick=()=>{viewDir.set(0,.05,1);fit(selected?unitBounds(units.get(selected.unit)):mainBounds)};
 function cancelSelection(){selected=null;for(const h of [highlight,highlightWire]){if(h){scene.remove(h);h.geometry.dispose();h.material.dispose()}}highlight=null;highlightWire=null;$('hideSelected').disabled=true;$('info').textContent='点击构件查看图号与尺寸依据。'}
 function select(m){cancelSelection();const list=units.get(m.unit).filter(x=>cats.get(x.cat).visible&&!hiddenUnits.has(x.unit)&&(!detailMeshes||detailMeshes.has(x)));if(!list.length)return;selected=m;const {g,e}=build(list);highlight=new T.Mesh(g,new T.MeshBasicMaterial({color:'#e8ab46',transparent:true,opacity:.55,side:T.DoubleSide,depthWrite:false}));highlightWire=new T.LineSegments(e,new T.LineBasicMaterial({color:'#ffab20',depthTest:false}));highlightWire.renderOrder=8;scene.add(highlight,highlightWire);highlight.visible=mode!=='wire';highlightWire.visible=mode!=='solid';$('hideSelected').disabled=false;$('info').textContent=`${m.unit}\n${m.name}\n`+(m.memberId?`单体编号：${m.memberId}\n所属：${m.parentUnit}\n`:'')+`依据：${m.source}\n状态：${m.status}\n`+Object.entries(m.props).map(([k,v])=>`${k}：${v}`).join('\n')}
 for(const c of cats.values())c.original={g:c.solid.geometry,e:c.wire.geometry,ranges:c.solid.userData.ranges};
+const selectGeometry=select;
+select=m=>{
+ selectGeometry(m);if(selected!==m||loaded.propertiesLoaded)return;
+ const basic=$('info').textContent;$('info').textContent=basic+'\n正在按需读取原始构件参数…';
+ loaded.loadProperties().then(()=>{if(selected!==m)return;$('info').textContent=`${m.unit}\n${m.name}\n`+(m.memberId?`单体编号：${m.memberId}\n所属：${m.parentUnit}\n`:'')+`依据：${m.source}\n状态：${m.status}\n`+Object.entries(m.props).map(([k,v])=>`${k}：${v}`).join('\n')}).catch(e=>{if(selected===m)$('info').textContent=basic+'\n属性读取失败，请重新点选重试：'+e.message});
+};
 function refreshGeometry(names=null){for(const [name,c] of cats){if(names&&!names.has(name))continue;const list=c.list.filter(m=>!hiddenUnits.has(m.unit)&&(!detailMeshes||detailMeshes.has(m)));if(c.solid.geometry!==c.original.g){c.solid.geometry.dispose();c.wire.geometry.dispose()}c.solid.geometry=c.original.g;c.wire.geometry=c.original.e;c.solid.userData.ranges=c.original.ranges;c.detailEmpty=!list.length;if(list.length&&list.length!==c.list.length){const b=build(list);c.solid.geometry=b.g;c.wire.geometry=b.e;c.solid.userData.ranges=b.ranges}}setMode();$('restoreMembers').textContent=`恢复隐藏单元（${hiddenUnits.size}）`}
 $('hideSelected').onclick=()=>{if(!selected)return;const key=selected.unit;hiddenUnits.add(key);const names=new Set(units.get(key).map(m=>m.cat));cancelSelection();refreshGeometry(names)};
 $('restoreMembers').onclick=()=>{hiddenUnits.clear();refreshGeometry();cancelSelection()};

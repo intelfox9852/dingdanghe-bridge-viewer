@@ -27,10 +27,11 @@ function normals(pos,index){
  for(let i=0;i<n.length;i+=3){const length=Math.hypot(n[i],n[i+1],n[i+2])||1;n[i]/=length;n[i+1]/=length;n[i+2]/=length}
  return n;
 }
-onmessage=async({data:{base}})=>{try{
+onmessage=async({data:{base,mobile=false}})=>{try{
  const start=performance.now();let manifest;
  for(let attempt=0;attempt<180;attempt++){
-  const r=await fetch(new URL('./runtime/manifest.json',base),{cache:'no-cache'});
+  let r=await fetch(new URL(mobile?'./runtime/mobile-manifest.json':'./runtime/manifest.json',base),{cache:'no-cache'});
+  if(mobile&&r.status===404){mobile=false;r=await fetch(new URL('./runtime/manifest.json',base),{cache:'no-cache'})}
   if(r.status===503){report('模型已更新，正在准备快速显示文件…');await wait(1000);continue}
   if(r.status===404){report('正在后台读取原始模型…');const response=await fetch(new URL('./model.json',base));if(!response.ok)throw Error('模型读取失败');const model=await response.json();postMessage({type:'ready',model,cache:null,timing:{fallback:true,total_ms:performance.now()-start}});return}
   if(!r.ok)throw Error('模型索引读取失败：HTTP '+r.status);manifest=await r.json();break;
@@ -56,5 +57,5 @@ onmessage=async({data:{base}})=>{try{
   }else{batch.position=view(batch.position);batch.faces=view(batch.faces);batch.edges=view(batch.edges)}
   batch.normal=normals(batch.position,batch.faces);transfers.push(batch.normal.buffer);
  }
- postMessage({type:'ready',model:payload.model,cache:payload.batches,timing:{total_ms:performance.now()-start,sourceBytes:manifest.sourceSize,transferBytes:manifest.dataBytes+manifest.metadataBytes,sourceSHA256:manifest.sourceSHA256}},transfers);
+ postMessage({type:'ready',model:payload.model,cache:payload.batches,propertiesURL:manifest.properties?new URL('./runtime/'+manifest.properties,base).href:null,timing:{total_ms:performance.now()-start,sourceBytes:manifest.sourceSize,transferBytes:manifest.dataBytes+manifest.metadataBytes,sourceSHA256:manifest.sourceSHA256,mobile:Boolean(manifest.mobile),triangles:manifest.display?.afterTriangles}},transfers);
 }catch(e){postMessage({type:'error',message:e.message})}};

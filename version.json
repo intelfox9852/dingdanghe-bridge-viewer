@@ -1,13 +1,14 @@
 {
   "date": "2026-11-10",
-  "revision": "875bada405be",
+  "revision": "3ec7c271a8e5",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
-  "modelRevision": "offline-rebuilt-surface",
+  "modelRevision": "mobile-lightweight-lazy-properties",
   "staticOblique": true,
   "patchColor": "#3d5b50",
   "firstFrameRepaired": true,
   "offlineRepaired": true,
+  "mobileOptimized": true,
   "files": {
     ".nojekyll": {
       "bytes": 0,
@@ -19,15 +20,15 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "5d57846484ac36bc91a27cbdf98826a0f49a80911d8aa2cd673cae13ffeed573"
+      "sha256": "893e1033966b83f7529e2d6092d5a7172eca12e56d05e871e51cf3055ab256d6"
     },
     "model_loader.js": {
-      "bytes": 782,
-      "sha256": "a567e59454abda06e4af0476d1f346b30e10a9dea00a288717414c32a4a56e95"
+      "bytes": 1647,
+      "sha256": "6c40300080ddad49598ed68ba32f224a66c24e2b28c7862c7766021c526f31a7"
     },
     "model_worker.js": {
-      "bytes": 5542,
-      "sha256": "5861c0430d4a8bcbb22627362b300d46da81f6fe22faee70557fae5df2c6eb28"
+      "bytes": 5876,
+      "sha256": "c0d5801e3eaa73c5bdb4f248e9b3a7060e55a03f981efbfe699b58e5f77fcc81"
     },
     "oblique/clipped/01649c252241ee54.b3dm": {
       "bytes": 26164,
@@ -2074,12 +2075,12 @@
       "sha256": "5619d7207cec190f6f9880418ba2260da05ac7a9a705e7883f26b10b26ce2d5c"
     },
     "oblique.js": {
-      "bytes": 6948,
-      "sha256": "14e5778cd40abb0cd86d7ee71cbed06d3330f01ff1e03306ddaf739d63d89184"
+      "bytes": 6999,
+      "sha256": "92e7964a05aa908e0777813b4be191a5f5e7608c78850d1f1045c75ae0596013"
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
-      "sha256": "bfb13143fbb286815732a72835d7f2de2575ec4a3f340ccd4dcfdfba2463b385"
+      "sha256": "b771b506618fc26d1d19038c9f7c212b3da5951fc5a008a0f62a8fba264a2ec4"
     },
     "oblique_surface_repair.js": {
       "bytes": 4780,
@@ -2090,8 +2091,8 @@
       "sha256": "3a870fdbb7e419aa55af3c0107434d82b5efe17e6c31c03a1a440be4f5cc0581"
     },
     "README.md": {
-      "bytes": 1023,
-      "sha256": "dbc1c4e5f071de204d017af7e76cb0cd70f5f2c4bc4c62ad9e57cd5546107dda"
+      "bytes": 1464,
+      "sha256": "cea9892766078e05d2383c2cf2e7098c73501c755d820184082ff46b9b762f22"
     },
     "runtime/561029c510a45242-v2.part-00.bin.gz": {
       "bytes": 25165824,
@@ -2105,13 +2106,29 @@
       "bytes": 20023075,
       "sha256": "09938c95babc2a4648a680973dc02740782b6c3aa9291d5f6fd092fc59734700"
     },
+    "runtime/fbfa9ceafc7a42ad-mobile.bin.gz": {
+      "bytes": 12111352,
+      "sha256": "9b45187d9281dbaec6dd662b373181573ec106d45019a86e5fef68ab2e54147d"
+    },
     "runtime/manifest.json": {
       "bytes": 583,
       "sha256": "09fd073e87c86844a3599b4e1fc6dd5d900b469df63b22032afd8339705614ce"
     },
+    "runtime/mobile-manifest.json": {
+      "bytes": 804,
+      "sha256": "f3a585d65d91d7fd46cbe3a075cbc77af8c669518806f425ca3f5cc2d416bc4c"
+    },
     "runtime/public-e0cb61e5ae995a09.meta.json.gz": {
       "bytes": 911980,
       "sha256": "e0cb61e5ae995a09be0432c1f959fbc1ee09558440ff71d26af2b4d40305c6e6"
+    },
+    "runtime/public-mobile-271b8282dae0d915.metadata.json.gz": {
+      "bytes": 667357,
+      "sha256": "271b8282dae0d9156e0cf462bdacf78c6770fbf0094113e74230f596a1c35b92"
+    },
+    "runtime/public-mobile-841b01439cb89e33.properties.json.gz": {
+      "bytes": 200403,
+      "sha256": "841b01439cb89e333fc7402b102de69800f0dc95d8d377d79fca5e06218b5de5"
     },
     "section_3d.js": {
       "bytes": 10014,
@@ -2186,8 +2203,8 @@
       "sha256": "eafead3154ec06093f3108bddceab360f048a6fcebd7c085d5aae0ab5404bd25"
     },
     "viewer.js": {
-      "bytes": 20056,
-      "sha256": "dbdadf9f9e67074da8983358faa2687dcff9386dab2b5481188e5bde170b3c3e"
+      "bytes": 21620,
+      "sha256": "59f1ec615b430e0660b768433c8d508b0892d53bfda2dc0c4d0032253a6a6eff"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,
@@ -2202,8 +2219,8 @@
       "sha256": "b2d1288e9fc1dab361f2eb9be9aad8345d6d942987e9c48bb61050c45b87a651"
     },
     "建模说明.md": {
-      "bytes": 31777,
-      "sha256": "11406486ee7f57939bbcff25fd3b13d07f62b8461c791e61dac4c6f9ba245210"
+      "bytes": 32149,
+      "sha256": "fb6438370fa318c74a6539d509aa173afd1aa6ed842c703eb2fbe9ce9b782d6d"
     },
     "构件单体清单.json": {
       "bytes": 286867,
