@@ -3,6 +3,7 @@ import {OrbitControls} from './vendor/OrbitControls.js';
 import {TilesRenderer} from '3d-tiles-renderer/three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+import {applyObliqueQuality} from './oblique_quality.js';
 
 const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
 const mobile=/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent),original=params.get('obliqueLOD')==='original';
@@ -24,7 +25,7 @@ export async function main({createRenderer,createGroup,classic=false}){
  const planes=compatible?[]:[new T.Plane(new T.Vector3(1,0,0),-x0),new T.Plane(new T.Vector3(-1,0,0),x1),new T.Plane(new T.Vector3(0,0,-1),-y0),new T.Plane(new T.Vector3(0,0,1),y1)];if(classic)renderer.localClippingEnabled=true;else if(!compatible)group.clippingPlanes=planes;group.add(tiles.group);scene.add(group);
  const draco=new DRACOLoader(tiles.manager);draco.setDecoderPath('./vendor/oblique-three/examples/jsm/libs/draco/gltf/');draco.setWorkerLimit(mobile?1:2);
  const loader=new GLTFLoader(tiles.manager);loader.setDRACOLoader(draco);if(!compatible){const {MeshoptDecoder}=await import('three/addons/libs/meshopt_decoder.module.js');loader.setMeshoptDecoder(MeshoptDecoder)}tiles.manager.addHandler(/\.(gltf|glb)$/i,loader);
- tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=mobile?64:16;tiles.loadAncestors=true;tiles.loadSiblings=false;
+ tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=16;tiles.loadAncestors=true;tiles.loadSiblings=false;
  tiles.downloadQueue.maxJobs=mobile?1:4;tiles.parseQueue.maxJobs=1;tiles.lruCache.minSize=mobile?8:80;tiles.lruCache.maxSize=mobile?24:140;if(mobile){tiles.lruCache.minBytesSize=16*1024*1024;tiles.lruCache.maxBytesSize=24*1024*1024}
  // Show the complete coarse parent before requesting view-dependent children.
  tiles.maxDepth=1;
@@ -37,7 +38,7 @@ export async function main({createRenderer,createGroup,classic=false}){
  tiles.addEventListener('tile-visibility-change',()=>dirty=true);
  controls.addEventListener('change',()=>dirty=true);
  $('dataset').value=compatible?'mobile':original?'original':'optimized';$('dataset').onchange=()=>{const u=new URL(location.href);u.searchParams.set('obliqueLOD',$('dataset').value);location.href=u.href};
- $('quality').value=String(tiles.errorTarget);$('quality').onchange=()=>{tiles.errorTarget=Number($('quality').value);dirty=true};
+ $('quality').value=String(tiles.errorTarget);$('quality').onchange=()=>{applyObliqueQuality(tiles,$('quality').value,mobile);dirty=true};
  $('full').onclick=()=>frame();$('near').onclick=()=>frame(true);$('show').onchange=()=>{group.visible=$('show').checked;dirty=true};$('base').onchange=()=>{base.visible=$('base').checked;dirty=true};$('menu').onclick=()=>{$('panel').hidden=!$('panel').hidden;$('menu').textContent=$('panel').hidden?'展开菜单':'隐藏菜单'};
  async function addBase(){
   try{
@@ -52,7 +53,7 @@ export async function main({createRenderer,createGroup,classic=false}){
  function animate(now){
   requestAnimationFrame(animate);if(document.hidden)return;
   camera.updateMatrixWorld();tiles.group.updateMatrixWorld(true);if(group.visible)tiles.update();
-  if(dirty){dirty=false;renderer.render(scene,camera);frames++;if(firstVisibleMs===null&&tiles.visibleTiles.size){firstVisibleMs=performance.now();window.sceneBoot?.ready();$('timing').textContent=`首批实景 ${(firstVisibleMs/1000).toFixed(2)} 秒 · ${compatible?'手机兼容':original?'原版':'优化'}LOD`;tiles.maxDepth=mobile?2:Infinity;dirty=true;if(!baseStarted){baseStarted=true;addBase()}}}
+  if(dirty){dirty=false;renderer.render(scene,camera);frames++;if(firstVisibleMs===null&&tiles.visibleTiles.size){firstVisibleMs=performance.now();window.sceneBoot?.ready();$('timing').textContent=`首批实景 ${(firstVisibleMs/1000).toFixed(2)} 秒 · ${compatible?'手机渐进':original?'原版':'优化'}LOD`;applyObliqueQuality(tiles,$('quality').value,mobile);dirty=true;if(!baseStarted){baseStarted=true;addBase()}}}
   if(now-lastStatus>800){$('status').textContent=`${backend}${classic?'兼容':''} · ${firstVisibleMs===null?'正在载入首层 · ':''}已载入 ${models} 个模型 · 显示 ${tiles.visibleTiles.size} 瓦片${mobile?' · 实景缓存 '+(tiles.lruCache.cachedBytes/1048576).toFixed(1)+' MB':''}${failures?' · 失败 '+failures:''}`;lastStatus=now}
  }
  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);tiles.setResolutionFromRenderer(camera,renderer);dirty=true});requestAnimationFrame(animate);

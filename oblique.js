@@ -2,6 +2,7 @@ import * as T from 'three';
 import {TilesRenderer} from '3d-tiles-renderer/three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+import {applyObliqueQuality} from './oblique_quality.js?v=9f67fcf7ddbc';
 
 // A running page can still hold an older terrain module across a viewer update.
 // Restore the visibility contract as well as versioning the module imports.
@@ -33,7 +34,7 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
   const compatible=!!config.mobileEntry&&(requestedLOD==='mobile'||mobile&&!requestedLOD);
   if(compatible)config.entry=config.mobileEntry;else if(config.optimizedEntry&&!originalLOD)config.entry=config.optimizedEntry;
   if(config.optimizedEntry){
-   const label=document.createElement('label');label.textContent='实景数据 ';const select=document.createElement('select');select.id='obliqueDataset';select.innerHTML='<option value="mobile">手机兼容（简化细节）</option><option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option>';select.value=compatible?'mobile':originalLOD?'original':'optimized';select.onchange=()=>{const url=new URL(location.href);url.searchParams.set('obliqueLOD',select.value);location.href=url.href};label.append(select);$('obliqueQuality').before(label);
+   const label=document.createElement('label');label.textContent='实景数据 ';const select=document.createElement('select');select.id='obliqueDataset';select.innerHTML='<option value="mobile">手机兼容（渐进细节）</option><option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option>';select.value=compatible?'mobile':originalLOD?'original':'optimized';select.onchange=()=>{const url=new URL(location.href);url.searchParams.set('obliqueLOD',select.value);location.href=url.href};label.append(select);$('obliqueQuality').before(label);
    const link=document.createElement('a');link.href='./oblique_three.html?v='+encodeURIComponent(revision);link.textContent='纯实景快速查看';link.style.display='block';$('obliqueStatus').after(link);
   }
   if(config.coverageTexture&&typeof terrain.setObliqueCoverage==='function')await terrain.setObliqueCoverage(config.coverageTexture);
@@ -71,7 +72,7 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
   tiles.addEventListener('load-error',e=>{failures++;status.textContent=`部分实景瓦片读取失败（${failures}）：${e.error?.message||e.url}`;});
   function sync(){group.visible=enabled&&terrain.mode==='3d';setTerrainOblique(group.visible&&models>0)}
   $('obliqueShow').onchange=()=>{enabled=$('obliqueShow').checked;sync()};
-  $('obliqueQuality').onchange=()=>tiles.errorTarget=Number($('obliqueQuality').value);
+  $('obliqueQuality').onchange=()=>applyObliqueQuality(tiles,$('obliqueQuality').value,mobile);
   $('obliqueHeight').onchange=()=>{const h=Number($('obliqueHeight').value);if(Number.isFinite(h)&&Math.abs(h)<=200){group.position.y=h;group.updateMatrixWorld(true)}};
   const oldMode=$('terrainMode').onchange;$('terrainMode').onchange=()=>{oldMode();sync()};
   sync();
@@ -82,7 +83,7 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
    if(group.visible!==visible){group.visible=visible;setTerrainOblique(visible&&models>0)}
    if(!visible)return;
    camera.updateMatrixWorld();tiles.group.updateMatrixWorld(true);tiles.update();
-   if(tiles.maxDepth===1&&tiles.visibleTiles.size>0)tiles.maxDepth=mobile?2:Infinity;
+   if(tiles.maxDepth===1&&tiles.visibleTiles.size>0)applyObliqueQuality(tiles,$('obliqueQuality').value,mobile);
    const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${mobile?' · 实景缓存 '+(tiles.lruCache.cachedBytes/1048576).toFixed(1)+' MB':''}${failures?' · 失败 '+failures:''}`;lastText=now}
   };
   current.dispose=()=>{disposed=true;tiles.dispose();repair.dispose();draco.dispose();scene.remove(group);setTerrainOblique(false)};

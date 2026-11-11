@@ -1,9 +1,9 @@
-import {loadModel,mobileDevice,lightweight} from './model_loader.js?v=87d11a76d58a';
+import {loadModel,mobileDevice,lightweight} from './model_loader.js?v=9f67fcf7ddbc';
 import * as T from 'three';
 import {OrbitControls} from './vendor/OrbitControls.js';
-import {loadTerrain} from './terrain.js?v=87d11a76d58a';
-import {setupCrossSections} from './cross_sections.js?v=87d11a76d58a';
-import {setupSection3D} from './section_3d.js?v=87d11a76d58a';
+import {loadTerrain} from './terrain.js?v=9f67fcf7ddbc';
+import {setupCrossSections} from './cross_sections.js?v=9f67fcf7ddbc';
+import {setupSection3D} from './section_3d.js?v=9f67fcf7ddbc';
 const $=s=>document.getElementById(s),scene=new T.Scene();scene.background=new T.Color('#e7edf2');
 const startupAt=performance.now(),progress=text=>$('status').textContent=text;progress('正在初始化显示…');
 const rendererChoice=new URLSearchParams(location.search).get('renderer'),phoneMode=mobileDevice||lightweight;
@@ -48,7 +48,7 @@ const mainList=model.meshes.filter(m=>m.cat==='主桥箱梁'||(/(39|40|41|42)号
 progress('正在读取测绘地形…');const terrain=await loadTerrain(scene,camera);const sections=setupCrossSections(model);const section3D=setupSection3D({model,sections});$('waterEffect').onchange=()=>terrain.setEffect($('waterEffect').value);$('waterOpacity').oninput=()=>{terrain.setOpacity(Number($('waterOpacity').value)/100);$('waterOpacityValue').textContent=$('waterOpacity').value+'%'};
 $('terrainMode').onchange=()=>terrain.setMode($('terrainMode').value);$('water').onchange=()=>terrain.setWater($('water').checked);$('survey').onchange=()=>terrain.setPoints($('survey').checked);$('site').onclick=()=>fit(terrain.bounds);
 let oblique={};
-function startOblique(){import('./oblique.js?v=87d11a76d58a').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain,mobile:mobileDevice||lightweight})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
+function startOblique(){import('./oblique.js?v=9f67fcf7ddbc').then(({setupOblique})=>setupOblique({scene,camera,renderer,terrain,mobile:mobileDevice||lightweight})).then(layer=>{oblique=layer;if(window.bridge)window.bridge.oblique=layer;window.obliqueReady=true}).catch(e=>{console.error(e);$('status').textContent+=' · 实景暂未载入'})}
 if(mobileDevice||lightweight){$('waterEffect').value='plain';terrain.setEffect('plain')}
 function setXray(enabled){xray=enabled;const opacity=Number($('opacity').value)/100;for(const [name,c] of cats){if(fadeCats.has(name)){const m=c.solid.material;m.transparent=xray;m.opacity=xray?opacity:1;m.depthWrite=!xray;m.side=xray?T.FrontSide:T.DoubleSide;m.needsUpdate=true;c.solid.renderOrder=xray?2:0}}$('xray').classList.toggle('active',xray);$('opacityRow').hidden=!xray;$('opacityValue').textContent=$('opacity').value+'%';setMode()}
 $('xray').onclick=()=>setXray(!xray);$('opacity').oninput=()=>setXray(true);

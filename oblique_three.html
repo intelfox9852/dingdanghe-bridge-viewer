@@ -5,10 +5,10 @@
 *{box-sizing:border-box}body{margin:0;overflow:hidden;background:#e7edf2;color:#293e4b;font:14px/1.6 system-ui}canvas{display:block;touch-action:none}#panel{position:fixed;left:16px;top:16px;max-width:min(380px,calc(100vw - 90px));padding:16px;background:#fffffff0;border:1px solid #d5e1e6;border-radius:10px;z-index:2}h1{font-size:18px;margin:0 0 6px}p{margin:7px 0}button,select,a{font:inherit;background:white;color:#294f61;border:1px solid #c9dbe2;border-radius:5px;padding:6px;margin:2px;cursor:pointer}a{display:inline-block;text-decoration:none}small{color:#607785}#menu{position:fixed;right:12px;top:16px;z-index:3}#error{color:#a22525}select{max-width:100%}@media(max-width:650px){#panel{left:8px;top:8px;padding:12px;font-size:12px}h1{font-size:16px}}
 </style>
 <script type="importmap">{"imports":{"three":"./vendor/three.webgpu.js","three/webgpu":"./vendor/three.webgpu.js","three/addons/":"./vendor/oblique-three/examples/jsm/","3d-tiles-renderer/three":"./vendor/oblique-three/tiles/index.three.js"}}</script>
-<section id="panel"><h1>叮当河 · 纯实景快速查看</h1><p id="status">正在读取显示程序…</p><p id="timing"></p><label>实景数据 <select id="dataset"><option value="mobile">手机兼容（简化细节）</option><option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option></select></label><br>
+<section id="panel"><h1>叮当河 · 纯实景快速查看</h1><p id="status">正在读取显示程序…</p><p id="timing"></p><label>实景数据 <select id="dataset"><option value="mobile">手机兼容（渐进细节）</option><option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option></select></label><br>
 <button id="full">全景</button><button id="near">河道近景</button><label><input id="show" type="checkbox" checked>实景</label><br>
 <label>精度 <select id="quality"><option value="64">手机省内存</option><option value="32">流畅</option><option value="16">均衡</option><option value="8">精细</option></select></label><label><input id="base" type="checkbox" checked>地形／水面</label><br>
-<a href="./index.html?v=87d11a76d58a&quality=mobile&view=site">查看桥梁工程模型</a><a id="compat" href="?renderer=webgl2&obliqueLOD=mobile">兼容显示</a><p id="error" hidden></p><small>拖动旋转 · 双指缩放／平移<br>仅加载当前视野实景，不读取桥梁和钢束数据。<br>手机默认简化细节，完整LOD可在菜单切换。</small></section>
+<a href="./index.html?v=9f67fcf7ddbc&quality=mobile&view=site">查看桥梁工程模型</a><a id="compat" href="?renderer=webgl2&obliqueLOD=mobile">兼容显示</a><p id="error" hidden></p><small>拖动旋转 · 双指缩放／平移<br>仅加载当前视野实景，不读取桥梁和钢束数据。<br>手机先显示粗层，放大后按需加载精细层。</small></section>
 <button id="menu">隐藏菜单</button><script>
 (()=>{
  let ready=false;
@@ -17,6 +17,6 @@
  window.sceneBoot={ready(){ready=true;clearTimeout(timer)},fail};
  addEventListener('error',e=>fail(e.error||e.message));addEventListener('unhandledrejection',e=>fail(e.reason));
  const classic=new URLSearchParams(location.search).get('renderer')==='webgl2';
- import((classic?'./oblique_mobile.bundle.js':'./oblique_three.bundle.js')+'?v=87d11a76d58a').catch(fail);
+ import((classic?'./oblique_mobile.bundle.js':'./oblique_three.bundle.js')+'?v=9f67fcf7ddbc').catch(fail);
 })();
 </script></html>
