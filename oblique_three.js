@@ -14,9 +14,10 @@ export async function main({createRenderer,createGroup,classic=false}){
  const scene=new T.Scene();scene.background=new T.Color('#e7edf2');
  const camera=new T.PerspectiveCamera(45,innerWidth/innerHeight,.5,15000),controls=new OrbitControls(camera,renderer.domElement);controls.minDistance=5;controls.maxDistance=6000;
  $('status').textContent='显示已就绪，正在读取实景索引…';
- const config=await fetch('./oblique/config.json').then(r=>{if(!r.ok)throw Error('实景配置读取失败');return r.json()});
- const compatible=(mobile||classic)&&!params.has('obliqueLOD')||params.get('obliqueLOD')==='mobile';
- const address=compatible&&config.mobileEntry?config.mobileEntry:original?config.entry:(config.optimizedEntry||config.entry),tiles=new TilesRenderer(address);
+ const revision=new URL(import.meta.url).searchParams.get('v')||params.get('v')||'phone-compatible-20261111';
+ const config=await fetch('./oblique/config.json?v='+encodeURIComponent(revision),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('实景配置读取失败');return r.json()});
+ const compatible=!!config.mobileEntry&&(((mobile||classic)&&!params.has('obliqueLOD'))||params.get('obliqueLOD')==='mobile');
+ const address=compatible?config.mobileEntry:original?config.entry:(config.optimizedEntry||config.entry),tiles=new TilesRenderer(address+'?v='+encodeURIComponent(revision));
  const base=new T.Group();scene.add(base);
  tiles.group.matrixAutoUpdate=false;tiles.group.matrix.fromArray(config.earthToThree);tiles.group.updateMatrixWorld(true);
  const [x0,y0,x1,y1]=config.bounds,group=compatible?new T.Group():createGroup();

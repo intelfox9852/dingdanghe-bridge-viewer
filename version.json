@@ -1,6 +1,6 @@
 {
   "date": "2026-11-11",
-  "revision": "37b760826728",
+  "revision": "87d11a76d58a",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
   "modelRevision": "mobile-lightweight-lazy-properties",
@@ -27,11 +27,11 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "feae332bae83967aca037b20aafa0010538a7ff53148bcbfd1b1aa3cd1d71a95"
+      "sha256": "4213bd142376ca8a254506ae5c410c954f0a50f38e770ccf20f12e218618367e"
     },
     "model_loader.js": {
       "bytes": 1647,
-      "sha256": "dea765d48f0aa8512465a3ec075806bf72ba662f4efa2b7213f43f477653a019"
+      "sha256": "55390e32a62bb22796eb0a7e33ed140ba29a24550fcdf5c3a3a3aced4ff611fb"
     },
     "model_worker.js": {
       "bytes": 5876,
@@ -3138,12 +3138,12 @@
       "sha256": "5619d7207cec190f6f9880418ba2260da05ac7a9a705e7883f26b10b26ce2d5c"
     },
     "oblique.js": {
-      "bytes": 8729,
-      "sha256": "5f8cbca41c08fdec80d4204e1f6bb821b3d5c17a6a9b6b8c1d279208a58c317f"
+      "bytes": 8986,
+      "sha256": "82c31c33e60d790afe00ebc7ac4418e28fbbd13e744c72c0e36be9c7943f2896"
     },
     "oblique_mobile.bundle.js": {
-      "bytes": 747443,
-      "sha256": "0aa7aaff20ca5445a6e973e0360860e313b8b3c15fd7edb092a1c6edf62e6240"
+      "bytes": 747613,
+      "sha256": "cca87a04c49a107d32f2ccb58a4070eb42ad011431e42aab7ee54bb7154e86af"
     },
     "oblique_mobile.bundle.js.LEGAL.txt": {
       "bytes": 92,
@@ -3155,7 +3155,7 @@
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
-      "sha256": "0fd57f8d921ff6dbb7fa28549493553c2c5d3516fce72086aceaacdc04769116"
+      "sha256": "211e2a5af7e4ec68c63ec13991e4d94892316688f929f6d4becf24f958452d61"
     },
     "oblique_surface_repair.js": {
       "bytes": 4780,
@@ -3166,20 +3166,20 @@
       "sha256": "3a870fdbb7e419aa55af3c0107434d82b5efe17e6c31c03a1a440be4f5cc0581"
     },
     "oblique_three.bundle.js": {
-      "bytes": 1016436,
-      "sha256": "a7cc1a22ea443f9302d356db9f21bfe916686841d348b1ca70db162f54dd67e0"
+      "bytes": 1016606,
+      "sha256": "c9af448ed4bd9fad0481b9d694bdcd059079faa9ac7c60254adaf711e5f5144c"
     },
     "oblique_three.bundle.js.LEGAL.txt": {
       "bytes": 92,
       "sha256": "8507dae269ac0851dec99156da9c6c2fa6b1d672dca9c781340ee0a7f69cb74e"
     },
     "oblique_three.html": {
-      "bytes": 3156,
-      "sha256": "80b74c7818da5c91e38639fd03d58784640b9cc6177b63160325e1ced07be08c"
+      "bytes": 3171,
+      "sha256": "a1ddf90fdff2eab9be8f08faea4912b273b6d0b2b1b264f88afacae4f82ef96a"
     },
     "oblique_three.js": {
-      "bytes": 7873,
-      "sha256": "2c69fa670b7b2f268deecc1b99689941bed20256dff5188aee1c07dc07cc159d"
+      "bytes": 8075,
+      "sha256": "0177011b4cdf84ac039c0af646659baa33c301cc966586c244d8c98bc36f6b29"
     },
     "oblique_webgpu.js": {
       "bytes": 257,
@@ -3307,7 +3307,7 @@
     },
     "viewer.js": {
       "bytes": 21824,
-      "sha256": "86a6739034353086d61fd89b78b4344f7608acb57cfe4d78e420fc970cb911c0"
+      "sha256": "f89fa741ee2f679a0cc9a03ddefe8e70651e74ee1a0e16279f349855cb631c2c"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,

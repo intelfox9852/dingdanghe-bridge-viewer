@@ -27,18 +27,19 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
  $('obliqueShow').checked=!mobile;
  const current={legacyTerrainAdapter:terrainAPI.legacy,get tiles(){return tiles},get group(){return group},get config(){return config},get models(){return models},get failures(){return failures},get enabled(){return enabled},get repair(){return repair}};
  try{
-  const response=await fetch('./oblique/config.json',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
+  const revision=new URL(import.meta.url).searchParams.get('v')||new URLSearchParams(location.search).get('v')||'phone-compatible-20261111';
+  const response=await fetch('./oblique/config.json?v='+encodeURIComponent(revision),{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
   const requestedLOD=new URLSearchParams(location.search).get('obliqueLOD'),originalLOD=requestedLOD==='original';
   const compatible=!!config.mobileEntry&&(requestedLOD==='mobile'||mobile&&!requestedLOD);
   if(compatible)config.entry=config.mobileEntry;else if(config.optimizedEntry&&!originalLOD)config.entry=config.optimizedEntry;
   if(config.optimizedEntry){
    const label=document.createElement('label');label.textContent='实景数据 ';const select=document.createElement('select');select.id='obliqueDataset';select.innerHTML='<option value="mobile">手机兼容（简化细节）</option><option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option>';select.value=compatible?'mobile':originalLOD?'original':'optimized';select.onchange=()=>{const url=new URL(location.href);url.searchParams.set('obliqueLOD',select.value);location.href=url.href};label.append(select);$('obliqueQuality').before(label);
-   const link=document.createElement('a');link.href='./oblique_three.html';link.textContent='纯实景快速查看';link.style.display='block';$('obliqueStatus').after(link);
+   const link=document.createElement('a');link.href='./oblique_three.html?v='+encodeURIComponent(revision);link.textContent='纯实景快速查看';link.style.display='block';$('obliqueStatus').after(link);
   }
   if(config.coverageTexture&&typeof terrain.setObliqueCoverage==='function')await terrain.setObliqueCoverage(config.coverageTexture);
   if(!config.staticRelease){const probe=await fetch(config.sourceRoute+'3dtile.json',{method:'HEAD',signal:AbortSignal.timeout(10000)});
    if(!probe.ok)throw Error('需使用支持实景目录的本地入口（运行 local_preview.py）');}
-  tiles=new TilesRenderer(config.entry);tiles.group.matrixAutoUpdate=false;tiles.group.matrix.fromArray(config.earthToThree);tiles.group.updateMatrixWorld(true);
+  tiles=new TilesRenderer(config.entry+'?v='+encodeURIComponent(revision));tiles.group.matrixAutoUpdate=false;tiles.group.matrix.fromArray(config.earthToThree);tiles.group.updateMatrixWorld(true);
   group=compatible?new T.Group():new T.ClippingGroup();group.name='倾斜摄影：测绘图范围裁剪';
   const [x0,y0,x1,y1]=terrain.footprint?.bounds??config.bounds;
   if(!compatible)group.clippingPlanes=[new T.Plane(new T.Vector3(1,0,0),-x0),new T.Plane(new T.Vector3(-1,0,0),x1),
