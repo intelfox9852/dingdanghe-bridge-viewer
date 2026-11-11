@@ -1,4 +1,4 @@
-import {repairAtlas,repairMesh} from './oblique_surface_repair_core.mjs?v=3ec7c271a8e5';
+import {repairAtlas,repairMesh} from './oblique_surface_repair_core.mjs?v=a96fac2179ed';
 onmessage=({data})=>{
  try{
   const atlas=repairAtlas(data.pixels,data.width,data.height),mesh=repairMesh({...data,pixels:atlas.pixels});

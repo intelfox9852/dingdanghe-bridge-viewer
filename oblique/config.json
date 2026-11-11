@@ -214,5 +214,7 @@
   "preRepaired": true,
   "staticRelease": true,
   "repairMethod": "离线重建全部显示LOD；无运行时纹理替换",
-  "patchColor": "#3d5b50"
+  "patchColor": "#3d5b50",
+  "optimizedEntry": "./oblique/optimized-lod/tileset.json",
+  "optimizedMethod": "gltfpack 1.3: coarse mesh simplification + meshopt + WebP; fine Float32 positions retained"
 }

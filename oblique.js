@@ -2,6 +2,7 @@ import * as T from 'three';
 import {TilesRenderer} from '3d-tiles-renderer/three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+import {MeshoptDecoder} from 'three/addons/libs/meshopt_decoder.module.js';
 
 // A running page can still hold an older terrain module across a viewer update.
 // Restore the visibility contract as well as versioning the module imports.
@@ -28,6 +29,12 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
  const current={legacyTerrainAdapter:terrainAPI.legacy,get tiles(){return tiles},get group(){return group},get config(){return config},get models(){return models},get failures(){return failures},get enabled(){return enabled},get repair(){return repair}};
  try{
   const response=await fetch('./oblique/config.json',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
+  const originalLOD=new URLSearchParams(location.search).get('obliqueLOD')==='original';
+  if(config.optimizedEntry&&!originalLOD)config.entry=config.optimizedEntry;
+  if(config.optimizedEntry){
+   const label=document.createElement('label');label.textContent='实景数据 ';const select=document.createElement('select');select.id='obliqueDataset';select.innerHTML='<option value="optimized">优化LOD</option><option value="original">原版LOD（对照）</option>';select.value=originalLOD?'original':'optimized';select.onchange=()=>{const url=new URL(location.href);url.searchParams.set('obliqueLOD',select.value);location.href=url.href};label.append(select);$('obliqueQuality').before(label);
+   const link=document.createElement('a');link.href='./oblique_three.html';link.textContent='纯实景快速查看';link.style.display='block';$('obliqueStatus').after(link);
+  }
   if(config.coverageTexture&&typeof terrain.setObliqueCoverage==='function')await terrain.setObliqueCoverage(config.coverageTexture);
   if(!config.staticRelease){const probe=await fetch(config.sourceRoute+'3dtile.json',{method:'HEAD',signal:AbortSignal.timeout(10000)});
    if(!probe.ok)throw Error('需使用支持实景目录的本地入口（运行 local_preview.py）');}
@@ -45,8 +52,10 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
    });
   }});
   const draco=new DRACOLoader(tiles.manager);draco.setDecoderPath('./vendor/oblique-three/examples/jsm/libs/draco/gltf/');draco.setWorkerLimit(2);
-  const gltf=new GLTFLoader(tiles.manager);gltf.setDRACOLoader(draco);tiles.manager.addHandler(/\.(gltf|glb)$/i,gltf);
-  tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=16;tiles.loadAncestors=true;tiles.loadSiblings=true;
+  const gltf=new GLTFLoader(tiles.manager);gltf.setDRACOLoader(draco);gltf.setMeshoptDecoder(MeshoptDecoder);tiles.manager.addHandler(/\.(gltf|glb)$/i,gltf);
+  tiles.setCamera(camera);tiles.setResolutionFromRenderer(camera,renderer);tiles.errorTarget=mobile?32:16;tiles.loadAncestors=true;tiles.loadSiblings=false;
+  tiles.maxDepth=1;
+  $('obliqueQuality').value=String(tiles.errorTarget);
   tiles.lruCache.maxSize=180;tiles.lruCache.minSize=120;tiles.downloadQueue.maxJobs=3;tiles.parseQueue.maxJobs=1;
   repair={add(){},remove(){},dispose(){},enabled:true,get stats(){return {models,holes:0,pending:0,errors:0,pendingBlackMeshes:0}},details:[]};
   tiles.addEventListener('load-model',({scene:content})=>{
@@ -71,6 +80,7 @@ export async function setupOblique({scene,camera,renderer,terrain,mobile=false})
    if(group.visible!==visible){group.visible=visible;setTerrainOblique(visible&&models>0)}
    if(!visible)return;
    camera.updateMatrixWorld();tiles.group.updateMatrixWorld(true);tiles.update();
+   if(tiles.maxDepth===1&&tiles.visibleTiles.size>0)tiles.maxDepth=Infinity;
    const now=performance.now();if(now-lastText>800){status.textContent=`已载入 ${models} 个实景模型 · 显示 ${tiles.visibleTiles.size} 瓦片${failures?' · 失败 '+failures:''}`;lastText=now}
   };
   current.dispose=()=>{disposed=true;tiles.dispose();repair.dispose();draco.dispose();scene.remove(group);setTerrainOblique(false)};
