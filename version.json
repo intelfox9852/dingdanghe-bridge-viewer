@@ -1,6 +1,6 @@
 {
   "date": "2026-11-11",
-  "revision": "a96fac2179ed",
+  "revision": "37b760826728",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
   "modelRevision": "mobile-lightweight-lazy-properties",
@@ -12,6 +12,10 @@
   "optimizedOblique": true,
   "obliqueEntry": "oblique_three.html",
   "optimizedObliqueBytes": 9923344,
+  "phoneObliqueCompatible": true,
+  "phoneObliqueBytes": 1289300,
+  "phoneObliqueLevels": 2,
+  "phoneObliqueCodec": "JPEG-Float32",
   "files": {
     ".nojekyll": {
       "bytes": 0,
@@ -23,11 +27,11 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "1da4fb2295065b1a9c55896c15360122fdaae2e2ff3b5bc4b268d1684631922f"
+      "sha256": "feae332bae83967aca037b20aafa0010538a7ff53148bcbfd1b1aa3cd1d71a95"
     },
     "model_loader.js": {
       "bytes": 1647,
-      "sha256": "b4d13cefeac3cbdb42809d371ea3840d8ddf370398318969bdf093bc32eddd20"
+      "sha256": "dea765d48f0aa8512465a3ec075806bf72ba662f4efa2b7213f43f477653a019"
     },
     "model_worker.js": {
       "bytes": 5876,
@@ -1010,8 +1014,8 @@
       "sha256": "1e213bcd1b8e5519f5940673a9917b302f9cf2b192256a5c863a536fb90173f4"
     },
     "oblique/config.json": {
-      "bytes": 5014,
-      "sha256": "1cb2dc959f185946ed8628eeb002a6493bdd7303e92bbd90dcf0c439e18ebd5d"
+      "bytes": 5075,
+      "sha256": "4d9653756b10d9847611addb14eb2d39eea906d29fce844a3db7567440abf289"
     },
     "oblique/lod/6d3a5137bf81/coverage.png": {
       "bytes": 9146,
@@ -1052,6 +1056,46 @@
     "oblique/lod/6d3a5137bf81/root.b3dm": {
       "bytes": 922372,
       "sha256": "e8d34800c264a3179664e6239b8a75b104729c6874daf726acb22a06daedaf33"
+    },
+    "oblique/mobile-compatible/1633eb5c3d63c46385b7.b3dm": {
+      "bytes": 104728,
+      "sha256": "1633eb5c3d63c46385b7080e7525f1f9bed6407d4046b153a1ac009f5ef74f8b"
+    },
+    "oblique/mobile-compatible/38e6da4dbed7b4378ef1.b3dm": {
+      "bytes": 102132,
+      "sha256": "38e6da4dbed7b4378ef15c431ec26090eb547940ad524b18ef354579cd2a7e8e"
+    },
+    "oblique/mobile-compatible/49e5caa4687a7a487810.b3dm": {
+      "bytes": 582676,
+      "sha256": "49e5caa4687a7a487810db80e812304c8a602c341660023e37f072ab84e9f171"
+    },
+    "oblique/mobile-compatible/67673948c7f30a3de78e.b3dm": {
+      "bytes": 76616,
+      "sha256": "67673948c7f30a3de78ea5a679e65dc48c4f4a0562db618dfb887d23ea4e7071"
+    },
+    "oblique/mobile-compatible/784f4b0beee4876564a4.b3dm": {
+      "bytes": 75144,
+      "sha256": "784f4b0beee4876564a4006894b2b4e2198ca54a03a8bbec1c3c4196230aef18"
+    },
+    "oblique/mobile-compatible/7fc1a7faac1b2b0ee8a3.b3dm": {
+      "bytes": 51564,
+      "sha256": "7fc1a7faac1b2b0ee8a36c6c28fe7584f2fac4958f9a72d3083d3e670543e635"
+    },
+    "oblique/mobile-compatible/a0df2a87b8044d29bb14.b3dm": {
+      "bytes": 115064,
+      "sha256": "a0df2a87b8044d29bb1402f2a967fd246e8ec7b3a56986517902841037ca531b"
+    },
+    "oblique/mobile-compatible/aadfb0725e7aa36763fd.b3dm": {
+      "bytes": 88344,
+      "sha256": "aadfb0725e7aa36763fd7a75fc25bc6b710284533fcc47e723564cb8f06d0b72"
+    },
+    "oblique/mobile-compatible/cfbc0dd3535a02f87113.b3dm": {
+      "bytes": 93032,
+      "sha256": "cfbc0dd3535a02f871138b7490f41901c3db6225c7602c073cfcb1188d8140be"
+    },
+    "oblique/mobile-compatible/tileset.json": {
+      "bytes": 1923,
+      "sha256": "751465ddfda72186502b59f3d58086feae51ba386da6353f3994d5ff65f0ee98"
     },
     "oblique/optimized-lod/001c76106fd56a5aa90c.b3dm": {
       "bytes": 15948,
@@ -3094,12 +3138,24 @@
       "sha256": "5619d7207cec190f6f9880418ba2260da05ac7a9a705e7883f26b10b26ce2d5c"
     },
     "oblique.js": {
-      "bytes": 8154,
-      "sha256": "8609a780697319003ee4831e06e52c7a7fbe488addca14841fff907c73fc122c"
+      "bytes": 8729,
+      "sha256": "5f8cbca41c08fdec80d4204e1f6bb821b3d5c17a6a9b6b8c1d279208a58c317f"
+    },
+    "oblique_mobile.bundle.js": {
+      "bytes": 747443,
+      "sha256": "0aa7aaff20ca5445a6e973e0360860e313b8b3c15fd7edb092a1c6edf62e6240"
+    },
+    "oblique_mobile.bundle.js.LEGAL.txt": {
+      "bytes": 92,
+      "sha256": "8507dae269ac0851dec99156da9c6c2fa6b1d672dca9c781340ee0a7f69cb74e"
+    },
+    "oblique_mobile.js": {
+      "bytes": 242,
+      "sha256": "801ddc5fc5d2740e8c2d5eecc127693baaad4ecea8164f06c08400d5947747d2"
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
-      "sha256": "469ab01eedf2327b81cd8b2c693a8fcb10d5cbef1b2648572b88199dca09df72"
+      "sha256": "0fd57f8d921ff6dbb7fa28549493553c2c5d3516fce72086aceaacdc04769116"
     },
     "oblique_surface_repair.js": {
       "bytes": 4780,
@@ -3110,24 +3166,28 @@
       "sha256": "3a870fdbb7e419aa55af3c0107434d82b5efe17e6c31c03a1a440be4f5cc0581"
     },
     "oblique_three.bundle.js": {
-      "bytes": 1014784,
-      "sha256": "fa9040d0ba627f32cfa8a91169b7b0930b16ad0b5daf6c9a53685a090d98f288"
+      "bytes": 1016436,
+      "sha256": "a7cc1a22ea443f9302d356db9f21bfe916686841d348b1ca70db162f54dd67e0"
     },
     "oblique_three.bundle.js.LEGAL.txt": {
       "bytes": 92,
       "sha256": "8507dae269ac0851dec99156da9c6c2fa6b1d672dca9c781340ee0a7f69cb74e"
     },
     "oblique_three.html": {
-      "bytes": 2248,
-      "sha256": "f8fbedacc6cf62cc809c26acafab6fbe8c3ee6a412dc68481e78e1439b9a9d84"
+      "bytes": 3156,
+      "sha256": "80b74c7818da5c91e38639fd03d58784640b9cc6177b63160325e1ced07be08c"
     },
     "oblique_three.js": {
-      "bytes": 6656,
-      "sha256": "c210b421af3c8493f6fd1d969f9f23e1266fcfc94d14ecb1c2cab2e5c2904fa5"
+      "bytes": 7873,
+      "sha256": "2c69fa670b7b2f268deecc1b99689941bed20256dff5188aee1c07dc07cc159d"
+    },
+    "oblique_webgpu.js": {
+      "bytes": 257,
+      "sha256": "e4eff28307cf95d679eaf3ac073ed036ef10bafe6760502c8d1f366a979d74fc"
     },
     "README.md": {
-      "bytes": 1892,
-      "sha256": "76b77e4340a00a69d6a7a70051d946de6fe05941107a583b564e5f8505bbbc61"
+      "bytes": 2366,
+      "sha256": "b8d8538b1258f496ff5348480c4de72f8ab45694a11633afa7a48486acb58b5b"
     },
     "runtime/561029c510a45242-v2.part-00.bin.gz": {
       "bytes": 25165824,
@@ -3233,6 +3293,10 @@
       "bytes": 1474799,
       "sha256": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578"
     },
+    "vendor/three.module.js": {
+      "bytes": 658900,
+      "sha256": "104f56145899722094556490d787aae0617cc2fc3382f31df02d724ea1aee341"
+    },
     "vendor/three.tsl.js": {
       "bytes": 1065544,
       "sha256": "d8f3cdb8b85b799a5631bd9a8d77e185d88ce1eb1bb051f48b332728a5423e3f"
@@ -3242,8 +3306,8 @@
       "sha256": "eafead3154ec06093f3108bddceab360f048a6fcebd7c085d5aae0ab5404bd25"
     },
     "viewer.js": {
-      "bytes": 21620,
-      "sha256": "dce6cd073eb20689b7d89b558f09b67aab95cad6a357c8c5db933754cbd47d68"
+      "bytes": 21824,
+      "sha256": "86a6739034353086d61fd89b78b4344f7608acb57cfe4d78e420fc970cb911c0"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,
