@@ -1,5 +1,5 @@
 {
-  "entry": "./oblique/rebuilt-surface/tileset.json",
+  "entry": "https://intelfox348-1531058915.cos.ap-nanjing.myqcloud.com/ls3d-f844a19fc336/tileset.json",
   "bounds": [
     -850,
     -300,
@@ -24,9 +24,9 @@
     19336.755381427876,
     1
   ],
-  "sourceRootTiles": 722,
-  "retainedRootTiles": 64,
-  "excludedRootTiles": 658,
+  "sourceRootTiles": 224,
+  "retainedRootTiles": 21,
+  "excludedRootTiles": 203,
   "projection": "+proj=tmerc +lat_0=0 +lon_0=119.333333333333333 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +units=m +no_defs",
   "bridgeRegistration": "S4-3-5桩位表，CGCS2000，中央子午线119°20′；地形配准.json",
   "heightStatus": "沿用3D Tiles原始高程；数据未声明垂直基准，暂不自动改高程，可在界面微调",
@@ -104,115 +104,12 @@
       "verticalCurvature_m": -0.06367971003055573
     }
   ],
-  "clipping": "原测绘图[-850,850]×[-300,300]；新父级几何精确裁剪、细级由相同四平面裁剪；缺实景区域保留测绘TIN",
-  "originalFiles": "仅只读服务原始数据；裁剪为本地显示裁剪，不改删原始文件",
-  "topLOD": {
-    "root": {
-      "bytes": 922372,
-      "vertices": 25141,
-      "triangles": 31216,
-      "texture": [
-        1024,
-        1024
-      ],
-      "sourceParts": 61
-    },
-    "groups": [
-      {
-        "bytes": 106108,
-        "vertices": 2553,
-        "triangles": 3264,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 8
-      },
-      {
-        "bytes": 73768,
-        "vertices": 1696,
-        "triangles": 2227,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 7
-      },
-      {
-        "bytes": 137084,
-        "vertices": 3607,
-        "triangles": 3726,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 8
-      },
-      {
-        "bytes": 127876,
-        "vertices": 3176,
-        "triangles": 3947,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 8
-      },
-      {
-        "bytes": 109484,
-        "vertices": 2565,
-        "triangles": 3610,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 7
-      },
-      {
-        "bytes": 162660,
-        "vertices": 4148,
-        "triangles": 5422,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 8
-      },
-      {
-        "bytes": 151408,
-        "vertices": 3882,
-        "triangles": 4958,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 7
-      },
-      {
-        "bytes": 131544,
-        "vertices": 3514,
-        "triangles": 4062,
-        "texture": [
-          512,
-          512
-        ],
-        "sourceParts": 8
-      }
-    ],
-    "sourceTiles": 64,
-    "sourceCoarseBytes": 1052504,
-    "groupCount": 8,
-    "geometryErrors_m": [
-      16,
-      8,
-      4
-    ],
-    "status": "重新生成可渲染顶层与分组层；保留原始更细LOD，原始文件只读",
-    "buildTag": "6d3a5137bf81"
-  },
-  "coverageTexture": "./oblique/lod/6d3a5137bf81/coverage.png",
-  "preRepaired": true,
+  "clipping": "测绘图1700×600m；region逐层空间筛选，四世界坐标平面逐像素裁剪",
+  "originalFiles": "COS托管原始几何、纹理与完整LOD；测绘边界作显示裁剪",
+  "coverageTexture": "./oblique/registered-ls/f844a19fc336/coverage.png",
+  "preRepaired": false,
   "staticRelease": true,
-  "repairMethod": "离线重建全部显示LOD；无运行时纹理替换",
-  "patchColor": "#3d5b50"
+  "processedSource": true,
+  "sourceProcessing": "直接使用Modelser3处理结果；不简化几何、不缩小纹理、不重建或截断LOD",
+  "buildTag": "f844a19fc336"
 }

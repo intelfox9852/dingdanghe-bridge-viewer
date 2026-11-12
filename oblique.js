@@ -20,15 +20,16 @@ export function ensureTerrainOblique(terrain){
 export async function setupOblique({scene,camera,renderer,terrain}){
  const terrainAPI=ensureTerrainOblique(terrain),setTerrainOblique=terrainAPI.set;
  const el=document.createElement('section');el.id='obliqueControls';
- el.innerHTML='<div class="rule"></div><b>倾斜摄影</b><label><input id="obliqueShow" type="checkbox" checked>显示倾斜摄影（地形图范围内）</label><select id="obliqueQuality" aria-label="倾斜摄影精度"><option value="32">流畅</option><option value="16" selected>均衡</option><option value="8">精细</option></select><label>高程微调 <input id="obliqueHeight" type="number" value="0" min="-200" max="200" step="0.1" style="width:85px"> m</label><small id="obliqueStatus">正在读取本地实景入口…</small><small style="display:block">按测绘图边界裁剪，缺覆盖处保留测绘地形。小孔按邻面补齐，河道与外边界保持开放；缺失处为插值表面。</small>';
+ el.innerHTML='<div class="rule"></div><b>倾斜摄影</b><label><input id="obliqueShow" type="checkbox" checked>显示倾斜摄影（地形图范围内）</label><select id="obliqueQuality" aria-label="倾斜摄影精度"><option value="32">流畅</option><option value="16" selected>均衡</option><option value="8">精细</option></select><label>高程微调 <input id="obliqueHeight" type="number" value="0" min="-200" max="200" step="0.1" style="width:85px"> m</label><small id="obliqueStatus">正在读取实景入口…</small><small style="display:block">按测绘图边界裁剪，缺覆盖处保留测绘地形。小孔按邻面补齐，河道与外边界保持开放；缺失处为插值表面。</small>';
  document.getElementById('site').parentElement.after(el);
  const $=s=>document.getElementById(s),status=$('obliqueStatus');
  let config,tiles,group,repair,models=0,failures=0,lastText=0,enabled=true,disposed=false;
  const current={legacyTerrainAdapter:terrainAPI.legacy,get tiles(){return tiles},get group(){return group},get config(){return config},get models(){return models},get failures(){return failures},get enabled(){return enabled},get repair(){return repair}};
  try{
-  const response=await fetch('./oblique/config.json',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
+  const response=await fetch('./oblique/config.json?v=1b0ea059a1fb',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
+  if(config.processedSource){const note=el.querySelector('small:last-child');note.textContent='使用重新处理的实景原始层级和纹理；按测绘图1700×600m边界显示裁剪，范围外不显示。';}
   if(config.coverageTexture&&typeof terrain.setObliqueCoverage==='function')await terrain.setObliqueCoverage(config.coverageTexture);
-  if(!config.staticRelease){const probe=await fetch(config.sourceRoute+'3dtile.json',{method:'HEAD',signal:AbortSignal.timeout(10000)});
+  if(!config.staticRelease){const probe=await fetch(config.sourceRoute+(config.sourceIndex||'3dtile.json'),{method:'HEAD',signal:AbortSignal.timeout(10000)});
    if(!probe.ok)throw Error('需使用支持实景目录的本地入口（运行 local_preview.py）');}
   tiles=new TilesRenderer(config.entry);tiles.group.matrixAutoUpdate=false;tiles.group.matrix.fromArray(config.earthToThree);tiles.group.updateMatrixWorld(true);
   group=new T.ClippingGroup();group.name='倾斜摄影：测绘图范围裁剪';
