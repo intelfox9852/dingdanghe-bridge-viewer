@@ -26,7 +26,7 @@ export async function setupOblique({scene,camera,renderer,terrain}){
  let config,tiles,group,repair,models=0,failures=0,lastText=0,enabled=true,disposed=false;
  const current={legacyTerrainAdapter:terrainAPI.legacy,get tiles(){return tiles},get group(){return group},get config(){return config},get models(){return models},get failures(){return failures},get enabled(){return enabled},get repair(){return repair}};
  try{
-  const response=await fetch('./oblique/config.json?v=1b0ea059a1fb',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
+  const response=await fetch('./oblique/config.json?v=69512d5c7f2f',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('未生成倾斜摄影配置');config=await response.json();
   if(config.processedSource){const note=el.querySelector('small:last-child');note.textContent='使用重新处理的实景原始层级和纹理；按测绘图1700×600m边界显示裁剪，范围外不显示。';}
   if(config.coverageTexture&&typeof terrain.setObliqueCoverage==='function')await terrain.setObliqueCoverage(config.coverageTexture);
   if(!config.staticRelease){const probe=await fetch(config.sourceRoute+(config.sourceIndex||'3dtile.json'),{method:'HEAD',signal:AbortSignal.timeout(10000)});

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "revision": "1b0ea059a1fb",
+  "revision": "69512d5c7f2f",
   "sourceModelSHA256": "561029c510a452420ffa056fad2549d6c7ed5a25ab7da9def4ad2faf20548deb",
   "components": 11458,
   "modelRevision": "unchanged-20261110-with-external-ls3d",
@@ -17,6 +17,7 @@
     850,
     300
   ],
+  "waterFallbackExcluded": true,
   "files": {
     ".nojekyll": {
       "bytes": 0,
@@ -28,7 +29,7 @@
     },
     "index.html": {
       "bytes": 8501,
-      "sha256": "f5599cfde127fd3b2c6675a74e9d15cffe8969d355a7a9f9a2cb48c81cd43b54"
+      "sha256": "e3e282fe81e021cdb52f100f3f326800b0cb598d101fb634936e0d9ce1b74b3b"
     },
     "model_loader.js": {
       "bytes": 782,
@@ -1015,8 +1016,8 @@
       "sha256": "1e213bcd1b8e5519f5940673a9917b302f9cf2b192256a5c863a536fb90173f4"
     },
     "oblique/config.json": {
-      "bytes": 2987,
-      "sha256": "0f15b72c60721bae2d73ca3754f77fbe763a7e25fbb342de467182d23a520fef"
+      "bytes": 3544,
+      "sha256": "14d4840dc5b3573cd364d60056c9a00d5892447d8f8d865e381de4e355ec47b3"
     },
     "oblique/lod/6d3a5137bf81/coverage.png": {
       "bytes": 9146,
@@ -2074,6 +2075,10 @@
       "bytes": 45907,
       "sha256": "075e05632932403e8a66c8c582ff7a3024b9913ffa33d0e4ba878ec00b14ab4d"
     },
+    "oblique/registered-ls/f844a19fc336/coverage-no-water-d3c5f7f63d4e.png": {
+      "bytes": 2377,
+      "sha256": "d3c5f7f63d4e1d313cae1a026a032936b45fdf84080b9ae44d9f743a9274a615"
+    },
     "oblique/registered-ls/f844a19fc336/coverage.png": {
       "bytes": 5056,
       "sha256": "02d0d4d2e65c58764aae0ba9a7c7864f25866e6e8c5d084eb54c05e782a88c6f"
@@ -2088,7 +2093,7 @@
     },
     "oblique.js": {
       "bytes": 7210,
-      "sha256": "3ec709e8b613a1e743c5db09af03cf9b4edf5505bf9fa71a37c9e10caafe1d92"
+      "sha256": "4744512e0dd0b27aa9494df44ec15d095357003f4f812a8e860230be96e16d69"
     },
     "oblique_repair_worker.js": {
       "bytes": 531,
@@ -2103,8 +2108,8 @@
       "sha256": "3a870fdbb7e419aa55af3c0107434d82b5efe17e6c31c03a1a440be4f5cc0581"
     },
     "README.md": {
-      "bytes": 1073,
-      "sha256": "948b65c7585bce06ef29bd3284aba335c8d54278e55949a84a9eac2fc1c4cc9c"
+      "bytes": 1237,
+      "sha256": "0b1d8045dd20e9aedc58da55fb6a980672674de42929c105c134b624d71002dc"
     },
     "runtime/561029c510a45242-v2.part-00.bin.gz": {
       "bytes": 25165824,
@@ -2200,7 +2205,7 @@
     },
     "viewer.js": {
       "bytes": 20056,
-      "sha256": "e947b64005c277b722713f15c50173460140a02692e62e907099cd67e0a815ae"
+      "sha256": "d8d0b297464d1f35eed44db8c8e8321f3a67a60928936c213c52bbacc7b45276"
     },
     "一般构造核查报告.md": {
       "bytes": 10349,

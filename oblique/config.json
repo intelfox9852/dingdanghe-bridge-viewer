@@ -106,10 +106,22 @@
   ],
   "clipping": "测绘图1700×600m；region逐层空间筛选，四世界坐标平面逐像素裁剪",
   "originalFiles": "COS托管原始几何、纹理与完整LOD；测绘边界作显示裁剪",
-  "coverageTexture": "./oblique/registered-ls/f844a19fc336/coverage.png",
+  "coverageTexture": "./oblique/registered-ls/f844a19fc336/coverage-no-water-d3c5f7f63d4e.png",
   "preRepaired": false,
   "staticRelease": true,
   "processedSource": true,
   "sourceProcessing": "直接使用Modelser3处理结果；不简化几何、不缩小纹理、不重建或截断LOD",
-  "buildTag": "f844a19fc336"
+  "buildTag": "f844a19fc336",
+  "waterExclusion": {
+    "method": "仅将已有水面三角形覆盖区从陆地补面可见性掩膜中排除",
+    "waterTriangles": 3890,
+    "waterElevation": 1.77,
+    "waterFootprintPixels": 50523,
+    "changedPixels": 26255,
+    "changedOutsideWaterPixels": 0,
+    "remainingFallbackPixelsInsideWater": 0,
+    "waterGeometrySHA256": "d89feb3b223ec9bf919a400d8c5f9fc3887f4cbf1f6cec5b80e433303547bdbb",
+    "maskSHA256": "d3c5f7f63d4e1d313cae1a026a032936b45fdf84080b9ae44d9f743a9274a615",
+    "sourceHeightsChanged": false
+  }
 }
